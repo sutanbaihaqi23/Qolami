@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Home"
+        android:id="@+id/menu_home"
+        android:icon="@drawable/round_home_24"/>
+    <item android:title="Pelajaran"
+        android:id="@+id/menu_pelajaran"
+        android:icon="@drawable/pelajaran"/>
+    <item android:title="Latihan"
+        android:id="@+id/menu_latihan"
+        android:icon="@drawable/round_home_24"/>
+    <item android:title="Ujian"
+        android:id="@+id/menu_ujian"
+        android:icon="@drawable/pelajaran"/>
+</menu>

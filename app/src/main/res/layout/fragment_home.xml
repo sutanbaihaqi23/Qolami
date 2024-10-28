@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.HomeFragment"
+    android:orientation="vertical"
+    android:gravity="bottom">
+
+    <TextView
+        android:id="@+id/tvHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_blank_fragment"
+        android:textSize="@dimen/_20ssp"/>
+
+    <Button
+
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:id="@+id/btnPelajaran"
+        android:layout_margin="@dimen/_10sdp"
+        android:text="Pelajaran"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:id="@+id/btnLatihan"
+        android:layout_margin="@dimen/_10sdp"
+        android:text="Latihan"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:id="@+id/btnUjian"
+        android:layout_margin="@dimen/_10sdp"
+        android:text="Ujian"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:id="@+id/btnToChangePassword"
+        android:layout_margin="@dimen/_20sdp"
+        android:text="toChangePassword"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:id="@+id/btnLogout"
+        android:layout_margin="@dimen/_20sdp"
+        android:text="logout"
+        />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:backgroundTint="#37729c"
+        app:menu="@menu/menu"
+        app:labelVisibilityMode="selected"
+       app:itemIconTint="@color/white"
+        app:itemTextColor="@color/selector_text_tint"
+        app:itemIconSize="@dimen/_20sdp"
+        />
+</LinearLayout>

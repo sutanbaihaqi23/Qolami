@@ -48,9 +48,12 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.firebase.auth)
+    implementation(libs.firebase.firestore)
+    implementation(libs.androidx.navigation.fragment)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.kotlinx.coroutines.android)
 
     implementation(libs.ssp.android)
     implementation(libs.sdp.android)
