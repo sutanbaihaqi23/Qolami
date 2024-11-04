@@ -1,6 +1,5 @@
-package com.example.TugasAkhir.qolami.ui
+package com.example.TugasAkhir.qolami.ui.pelajaran
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.TugasAkhir.qolami.R
 import com.example.TugasAkhir.qolami.adapter.PelajaranAdapter
 import com.example.TugasAkhir.qolami.data.HurufModel
-import com.example.TugasAkhir.qolami.databinding.FragmentPelajaranBinding
 
 class PelajaranFragment : Fragment() {
 

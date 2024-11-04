@@ -1,4 +1,4 @@
-package com.example.TugasAkhir.qolami.ui
+package com.example.TugasAkhir.qolami.ui.auth
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,9 +8,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 
-import androidx.navigation.fragment.findNavController
 import com.example.TugasAkhir.qolami.R
 import com.example.TugasAkhir.qolami.databinding.FragmentLoginBinding
+import com.example.TugasAkhir.qolami.ui.home.HomeFragment
 import com.example.TugasAkhir.qolami.viewmodel.AuthViewModel
 
 class LoginFragment : Fragment() {

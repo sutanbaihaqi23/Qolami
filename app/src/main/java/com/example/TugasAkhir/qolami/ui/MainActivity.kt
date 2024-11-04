@@ -1,14 +1,11 @@
-package com.example.TugasAkhir.qolami
+package com.example.TugasAkhir.qolami.ui
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.NavHostFragment
-import com.example.TugasAkhir.qolami.ui.HomeFragment
-import com.example.TugasAkhir.qolami.ui.LoginFragment
+import com.example.TugasAkhir.qolami.R
+import com.example.TugasAkhir.qolami.ui.auth.LoginFragment
+import com.example.TugasAkhir.qolami.ui.home.HomeFragment
 import com.example.TugasAkhir.qolami.viewmodel.AuthViewModel
 
 class MainActivity : AppCompatActivity() {

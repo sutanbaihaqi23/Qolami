@@ -1,17 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.DetailPelajaranFragment"
-    android:orientation="vertical">
+    tools:context=".ui.pelajaran.DetailPelajaranFragment"
+    android:orientation="vertical"
+    android:background="#015B8B">
 
-    <ImageView
-        android:id="@+id/imageViewHuruf"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginBottom="16dp" />
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_270sdp"
+        android:background="@drawable/bottom_rounded_layout">
+
+        <ImageView
+            android:id="@+id/ic_arrow_back_pelajaran"
+            android:layout_width="@dimen/_23sdp"
+            android:layout_height="@dimen/_23sdp"
+            android:background="@drawable/round_arrow_back_24"
+            android:backgroundTint="@color/black"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:layout_marginTop="@dimen/_12sdp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/title_huruf_hijaiyah"
+            android:text="Huruf Hijaiyah"
+            android:fontFamily="@font/nunitoextrabold"
+            android:textColor="#015B8B"
+            android:textSize="@dimen/_21ssp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_10sdp" />
+
+        <ImageView
+            android:id="@+id/imageViewHuruf"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_120sdp"
+            android:layout_marginBottom="16dp"
+            android:scaleType="fitCenter"
+            android:layout_below="@id/title_huruf_hijaiyah"
+            android:layout_centerHorizontal="true"
+            app:tint="@color/black"
+            android:layout_marginTop="@dimen/_35sdp"
+            android:src="@drawable/alifarrow"
+            />
+
+        <ImageView
+            android:id="@+id/ic_back_huruf"
+            android:layout_width="@dimen/_55sdp"
+            android:layout_height="@dimen/_55sdp"
+            android:background="@drawable/arrowbackcirlcle"
+            android:layout_toLeftOf="@id/imageViewHuruf"
+            android:layout_centerVertical="true"
+            />
+        <ImageView
+            android:id="@+id/ic_next_huruf"
+            android:layout_width="@dimen/_55sdp"
+            android:layout_height="@dimen/_55sdp"
+            android:background="@drawable/arrownextcircle"
+            android:layout_toRightOf="@id/imageViewHuruf"
+            android:layout_centerVertical="true"/>
+
+        <ImageView
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:id="@+id/ic_speaker"
+            android:background="@drawable/ic_speaker"
+            app:tint="@color/black"
+            android:layout_toLeftOf="@id/tv_latin_huruf"
+            android:layout_below="@id/imageViewHuruf"
+            android:layout_marginEnd="@dimen/_37sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+
+            />
+
+        <TextView
+            android:id="@+id/tv_latin_huruf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Huruf"
+            android:fontFamily="@font/nunitoextrabold"
+            android:textColor="#015B8B"
+            android:textStyle="bold"
+            android:textSize="@dimen/_30ssp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/imageViewHuruf"/>
+    </RelativeLayout>
 
 
+    <FrameLayout
+        android:id="@+id/gif_layout"
+        android:layout_width="@dimen/_260sdp"
+        android:layout_height="@dimen/_200sdp"
+        android:background="@drawable/rounded_layout"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_30sdp">
 
+        <ImageView
+            android:layout_margin="@dimen/_40sdp"
+            android:id="@+id/gif_pelajaran"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/alif"
+            app:tint="@color/black"
+            android:scaleType="fitCenter"
+            android:alpha="0.5"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <ImageView
+                android:id="@+id/solid_view_lines"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_4sdp"
+                android:background="@drawable/dashed_line_2"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/_40sdp"
+                />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_7sdp"
+                android:background="@drawable/dashed_line"
+                android:layout_above="@id/solid_view_lines"
+                android:layout_marginBottom="@dimen/_20sdp"/>
+        </RelativeLayout>
+
+    </FrameLayout>
 </LinearLayout>

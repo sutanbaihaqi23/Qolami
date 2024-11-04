@@ -1,4 +1,4 @@
-package com.example.TugasAkhir.qolami.ui
+package com.example.TugasAkhir.qolami.ui.pelajaran
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

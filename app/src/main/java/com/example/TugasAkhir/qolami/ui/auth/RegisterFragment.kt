@@ -1,4 +1,4 @@
-package com.example.TugasAkhir.qolami.ui
+package com.example.TugasAkhir.qolami.ui.auth
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,7 +10,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.TugasAkhir.qolami.R
 import com.example.TugasAkhir.qolami.databinding.FragmentRegisterBinding
 import com.example.TugasAkhir.qolami.viewmodel.AuthViewModel
-import kotlin.math.log
 
 class RegisterFragment : Fragment() {
     private lateinit var viewModel: AuthViewModel
@@ -37,7 +36,7 @@ class RegisterFragment : Fragment() {
                 if (password == confPassword){
                     viewModel.register(fullname, email, password) { success ->
                         if (success) {
-                            loginFragment=LoginFragment()
+                            loginFragment= LoginFragment()
                             parentFragmentManager.beginTransaction()
                                 .replace(R.id.fragmentContainer,loginFragment)
                                 .addToBackStack(null)
@@ -55,7 +54,7 @@ class RegisterFragment : Fragment() {
         }
 
         binding.btnToLogin.setOnClickListener {
-            loginFragment=LoginFragment()
+            loginFragment= LoginFragment()
             parentFragmentManager.beginTransaction()
                 .replace(R.id.fragmentContainer,loginFragment)
                 .addToBackStack(null)

@@ -1,4 +1,4 @@
-package com.example.TugasAkhir.qolami.ui
+package com.example.TugasAkhir.qolami.ui.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.example.TugasAkhir.qolami.R
 import com.example.TugasAkhir.qolami.databinding.FragmentHomeBinding
+import com.example.TugasAkhir.qolami.ui.changePassword.ChangePasswordFragment
+import com.example.TugasAkhir.qolami.ui.auth.LoginFragment
+import com.example.TugasAkhir.qolami.ui.pelajaran.PelajaranFragment
 import com.example.TugasAkhir.qolami.viewmodel.AuthViewModel
 
 class HomeFragment : Fragment() {
@@ -28,7 +31,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        loginFragment=LoginFragment()
+        loginFragment= LoginFragment()
         viewModel.getFullname { fullname ->
             binding.tvHome.text = fullname ?: "Nama tidak tersedia"
         }
