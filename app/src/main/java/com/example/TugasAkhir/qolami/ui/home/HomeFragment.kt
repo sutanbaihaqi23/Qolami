@@ -38,6 +38,7 @@ class HomeFragment : Fragment() {
         binding.btnLogout.setOnClickListener {
             viewModel.logout()
             parentFragmentManager.beginTransaction()
+                .setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right)
                 .replace(R.id.fragmentContainer,loginFragment)
                 .addToBackStack(null)
                 .commit()
@@ -46,6 +47,7 @@ class HomeFragment : Fragment() {
         binding.btnToChangePassword.setOnClickListener {
             changePasswordFragment = ChangePasswordFragment()
             parentFragmentManager.beginTransaction()
+                .setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right)
                 .replace(R.id.fragmentContainer,changePasswordFragment)
                 .addToBackStack(null)
                 .commit()
@@ -53,6 +55,7 @@ class HomeFragment : Fragment() {
         binding.btnPelajaran.setOnClickListener {
             val pelajaranFragment = PelajaranFragment()
             parentFragmentManager.beginTransaction()
+                .setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right)
                 .replace(R.id.fragmentContainer, pelajaranFragment)
                 .addToBackStack(null)
                 .commit()

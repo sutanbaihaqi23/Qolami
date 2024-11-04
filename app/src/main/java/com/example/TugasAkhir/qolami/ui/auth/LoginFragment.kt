@@ -39,6 +39,7 @@ class LoginFragment : Fragment() {
                 if (success) {
                     homeFragment= HomeFragment()
                     parentFragmentManager.beginTransaction()
+                        .setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right)
                         .replace(R.id.fragmentContainer,homeFragment)
                         .addToBackStack(null)
                         .commit()

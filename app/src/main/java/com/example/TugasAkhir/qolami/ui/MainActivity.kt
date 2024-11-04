@@ -23,10 +23,12 @@ class MainActivity : AppCompatActivity() {
 
         if (viewModel.isLoggedIn()) {
             supportFragmentManager.beginTransaction()
+                .setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right)
                 .replace(R.id.fragmentContainer, HomeFragment())
                 .commit()
         } else {
             supportFragmentManager.beginTransaction()
+                .setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right)
                 .replace(R.id.fragmentContainer, LoginFragment())
                 .commit()
         }
