@@ -17,9 +17,6 @@ class AuthViewModel : ViewModel() {
     private val firestore = FirebaseFirestore.getInstance()
     private val coroutineScope = CoroutineScope(Dispatchers.Main)
 
-    private val _loginStatus = MutableLiveData<Boolean>()
-    val loginStatus: LiveData<Boolean> get() = _loginStatus
-
     fun login(email: String, password: String, onComplete: (Boolean) -> Unit) {
        coroutineScope.launch {
            try {
@@ -58,19 +55,6 @@ class AuthViewModel : ViewModel() {
         }
     }
 
-    /*fun login(email: String, password: String) {
-        coroutineScope.launch {
-            try {
-                auth.signInWithEmailAndPassword(email, password).await()
-                _loginStatus.postValue(true)
-            } catch (e: Exception) {
-                Log.e("AuthViewModel", "Login failed: ${e.message}")
-                _loginStatus.postValue(false)
-            }
-        }
-    }*/
-
-
     fun register(fullname: String, email: String, password: String, onComplete: (Boolean) -> Unit) {
         coroutineScope.launch {
             try {
@@ -97,11 +81,15 @@ class AuthViewModel : ViewModel() {
 
     fun getFullname(onComplete: (String?) -> Unit) {
         val userId = auth.currentUser?.uid ?: return
-        coroutineScope.launch {
+        Log.d("AuthViewModel", "Fetching fullname for UID: $userId")
+        coroutineScope.launch(Dispatchers.Main) {
             try {
                 val doc = firestore.collection("users").document(userId).get().await()
-                onComplete(doc.getString("fullname"))
+                val fullname = doc.getString("fullname")
+                Log.d("AuthViewModel", "Fullname retrieved: $fullname")
+                onComplete(fullname)
             } catch (e: Exception) {
+                Log.e("AuthViewModel", "Error fetching fullname: ${e.message}")
                 onComplete(null)
             }
         }

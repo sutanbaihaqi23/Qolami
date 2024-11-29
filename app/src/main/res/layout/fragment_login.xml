@@ -4,40 +4,69 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.auth.LoginFragment"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#D0E3FF"
+    android:gravity="center_horizontal">
 
-    <EditText
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="QOLAMI"
+        android:fontFamily="@font/nunitoextrabold"
+        android:textColor="#015B8B"
+        android:textSize="@dimen/_30ssp"
+        android:layout_marginTop="@dimen/_15sdp"/>
+
+    <ImageView
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_width="@dimen/_160sdp"
+        android:layout_height="@dimen/_160sdp"
+        android:src="@drawable/qolami_logo"
+        android:scaleType="fitXY"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
         android:layout_width="match_parent"
         android:layout_height="@dimen/_40sdp"
         android:layout_margin="@dimen/_10sdp"
         android:hint="Email"
         android:id="@+id/etEmail"
         android:inputType="textEmailAddress"
+        android:background="@drawable/custom_edit_text"
+        android:paddingStart="@dimen/_10sdp"
         />
-    <EditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:layout_width="match_parent"
         android:layout_height="@dimen/_40sdp"
         android:layout_margin="@dimen/_10sdp"
         android:hint="Password"
         android:id="@+id/etPassword"
         android:inputType="textPassword"
+        android:background="@drawable/custom_edit_text"
+        android:paddingStart="@dimen/_10sdp"
         />
-    <Button
+
+    <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
         android:layout_height="@dimen/_40sdp"
-        android:layout_margin="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
         android:text="Login"
         android:id="@+id/btnLogin"
+        android:textColor="@color/white"
+        android:fontFamily="@font/nunitoextrabold"
+        android:textSize="@dimen/_15ssp"
+        android:textAllCaps="false"
+        android:background="@drawable/custom_button"
         />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_40sdp"
-        android:layout_margin="@dimen/_10sdp"
-        android:text="to Register"
+    <TextView
         android:id="@+id/btnToRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:text="Don't have an account? Register in Here"
+        android:fontFamily="@font/nunitoextrabold"
+        android:textColor="#015B8B"
         />
-
-
-
 </LinearLayout>

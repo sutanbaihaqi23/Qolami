@@ -8,17 +8,17 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.example.TugasAkhir.qolami.R
 import com.example.TugasAkhir.qolami.databinding.FragmentHomeBinding
-import com.example.TugasAkhir.qolami.ui.changePassword.ChangePasswordFragment
 import com.example.TugasAkhir.qolami.ui.auth.LoginFragment
-import com.example.TugasAkhir.qolami.ui.pelajaran.PelajaranFragment
+import com.example.TugasAkhir.qolami.ui.latihan.ListLatihanFragment
 import com.example.TugasAkhir.qolami.viewmodel.AuthViewModel
+import com.example.TugasAkhir.setting.SettingsFragment
 
 class HomeFragment : Fragment() {
     private lateinit var viewModel: AuthViewModel
     private lateinit var binding: FragmentHomeBinding
     private lateinit var loginFragment: LoginFragment
-    private lateinit var changePasswordFragment: ChangePasswordFragment
-
+    private lateinit var settingsFragment: SettingsFragment
+    private lateinit var lessonFragment:ListLatihanFragment
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -32,10 +32,30 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         loginFragment= LoginFragment()
+        settingsFragment=SettingsFragment()
+        lessonFragment=ListLatihanFragment()
         viewModel.getFullname { fullname ->
-            binding.tvHome.text = fullname ?: "Nama tidak tersedia"
+            if (isAdded) { // Pastikan fragment aktif
+                binding.tvHome.text = fullname ?: "Nama tidak tersedia"
+            }
         }
-        binding.btnLogout.setOnClickListener {
+
+        binding.icToSetting.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right)
+                .replace(R.id.fragmentContainer,settingsFragment)
+                .addToBackStack(null)
+                .commit()
+        }
+        binding.btnLesson.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right)
+                .replace(R.id.fragmentContainer,lessonFragment)
+                .addToBackStack(null)
+                .commit()
+
+        }
+       /* binding.btnLogout.setOnClickListener {
             viewModel.logout()
             parentFragmentManager.beginTransaction()
                 .setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right)
@@ -43,6 +63,7 @@ class HomeFragment : Fragment() {
                 .addToBackStack(null)
                 .commit()
         }
+
 
         binding.btnToChangePassword.setOnClickListener {
             changePasswordFragment = ChangePasswordFragment()
@@ -59,6 +80,6 @@ class HomeFragment : Fragment() {
                 .replace(R.id.fragmentContainer, pelajaranFragment)
                 .addToBackStack(null)
                 .commit()
-        }
+        }*/
     }
 }

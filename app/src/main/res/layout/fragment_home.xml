@@ -1,56 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.home.HomeFragment"
-    android:orientation="vertical"
-    android:gravity="bottom">
+    android:background="#D0E3FF">
 
+    <ImageView
+        android:id="@+id/ic_toSetting"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:src="@drawable/round_settings_24"
+        app:tint="#32B8FF"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        />
+
+    <TextView
+        android:id="@+id/tv_salam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Assalamu’alaikum"
+        android:textSize="@dimen/_13ssp"
+        android:layout_toRightOf="@id/ic_account"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:fontFamily="@font/nunitosemibold"
+        android:textColor="#171717"
+        android:layout_marginStart="@dimen/_10sdp"
+        />
     <TextView
         android:id="@+id/tvHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_blank_fragment"
-        android:textSize="@dimen/_20ssp"/>
-
-    <Button
-
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_40sdp"
-        android:id="@+id/btnPelajaran"
-        android:layout_margin="@dimen/_10sdp"
-        android:text="Pelajaran"
-        />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_40sdp"
-        android:id="@+id/btnLatihan"
-        android:layout_margin="@dimen/_10sdp"
-        android:text="Latihan"
-        />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_40sdp"
-        android:id="@+id/btnUjian"
-        android:layout_margin="@dimen/_10sdp"
-        android:text="Ujian"
+        android:text=""
+        android:textSize="@dimen/_18ssp"
+        android:layout_toRightOf="@id/ic_account"
+        android:fontFamily="@font/nunitoextrabold"
+        android:textColor="#171717"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_below="@id/tv_salam"
         />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_40sdp"
-        android:id="@+id/btnToChangePassword"
-        android:layout_margin="@dimen/_20sdp"
-        android:text="toChangePassword"
+    <ImageView
+        android:id="@+id/ic_account"
+        android:layout_width="@dimen/_55sdp"
+        android:layout_height="@dimen/_55sdp"
+        android:src="@drawable/baseline_account_circle_24"
+        app:tint="#32B8FF"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
         />
 
-    <Button
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btn_lesson"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_40sdp"
-        android:id="@+id/btnLogout"
-        android:layout_margin="@dimen/_20sdp"
-        android:text="logout"
-        />
-</LinearLayout>
+        android:layout_height="@dimen/_60sdp"
+        app:cardCornerRadius="@dimen/_30sdp"
+        android:layout_above="@id/btn_test"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        app:cardBackgroundColor="#32B8FF"
+        android:layout_marginBottom="@dimen/_10sdp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">\
+
+
+            <ImageView
+                android:id="@+id/img_lesson"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:src="@drawable/lesson_img"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_centerVertical="true"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lesson and Practice"
+                android:fontFamily="@font/nunitoextrabold"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/img_lesson"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15ssp"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btn_test"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60sdp"
+        app:cardCornerRadius="@dimen/_30sdp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        app:cardBackgroundColor="#32B8FF"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">\
+
+
+            <ImageView
+                android:id="@+id/img_test"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:src="@drawable/writing_img"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_centerVertical="true"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Writing Test"
+                android:fontFamily="@font/nunitoextrabold"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/img_test"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15ssp"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

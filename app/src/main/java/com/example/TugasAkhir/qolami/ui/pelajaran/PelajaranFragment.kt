@@ -34,7 +34,7 @@ class PelajaranFragment : Fragment() {
                 putString("HURUF_DETAIL", huruf.huruf)
                 putInt("HURUF_IMAGE", huruf.imageResource)
             }
-            val detailFragment = DetailPelajaranFragment().apply {
+            val detailFragment = DetailLessonFragment().apply {
                 arguments = bundle
             }
 

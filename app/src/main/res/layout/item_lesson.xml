@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_70sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.latihan.ListLatihanFragment"
+    android:background="#D0E3FF"
+    app:cardBackgroundColor="#32B8FF"
+    android:layout_margin="@dimen/_5sdp"
+    app:cardCornerRadius="15dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tv_lesson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lesson "
+            android:fontFamily="@font/nunitoextrabold"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_18ssp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            />
+        <ImageView
+            android:id="@+id/iv_img_1"
+            android:layout_width="@dimen/_17sdp"
+            android:layout_height="@dimen/_17sdp"
+            android:layout_below="@id/tv_lesson"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"/>
+        <ImageView
+            android:id="@+id/iv_img_2"
+            android:layout_width="@dimen/_17sdp"
+            android:layout_height="@dimen/_17sdp"
+            android:layout_below="@id/tv_lesson"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_toRightOf="@id/iv_img_1"/>
+        <ImageView
+            android:id="@+id/iv_img_3"
+            android:layout_width="@dimen/_17sdp"
+            android:layout_height="@dimen/_17sdp"
+            android:layout_below="@id/tv_lesson"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_toRightOf="@id/iv_img_2"/>
+    </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>

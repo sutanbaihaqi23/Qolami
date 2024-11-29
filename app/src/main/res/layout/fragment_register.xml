@@ -4,54 +4,104 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.auth.RegisterFragment"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/bg_register2"
+    android:gravity="bottom">
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="@dimen/_40sdp"
-        android:layout_margin="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_25sdp"
+        android:layout_marginEnd="@dimen/_25sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
         android:hint="Fullname"
         android:id="@+id/etFullname"
         android:inputType="textPersonName"
+        android:background="@drawable/custom_edit_text"
+        android:fontFamily="@font/nunitoextrabold"
+        android:paddingStart="@dimen/_7sdp"
         />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="@dimen/_40sdp"
-        android:layout_margin="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_25sdp"
+        android:layout_marginEnd="@dimen/_25sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
         android:hint="Email"
         android:id="@+id/etEmail"
         android:inputType="textEmailAddress"
+        android:background="@drawable/custom_edit_text"
+        android:fontFamily="@font/nunitoextrabold"
+        android:paddingStart="@dimen/_7sdp"
         />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="@dimen/_40sdp"
-        android:layout_margin="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_25sdp"
+        android:layout_marginEnd="@dimen/_25sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
         android:hint="Password"
         android:id="@+id/etPassword"
         android:inputType="textPassword"
+        android:background="@drawable/custom_edit_text"
+        android:fontFamily="@font/nunitoextrabold"
+        android:paddingStart="@dimen/_7sdp"
         />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="@dimen/_40sdp"
-        android:layout_margin="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_25sdp"
+        android:layout_marginEnd="@dimen/_25sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
         android:hint="Confirm Password"
         android:id="@+id/etConfirmPassword"
         android:inputType="textPassword"
+        android:background="@drawable/custom_edit_text"
+        android:fontFamily="@font/nunitoextrabold"
+        android:paddingStart="@dimen/_7sdp"
         />
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
         android:layout_height="@dimen/_40sdp"
-        android:layout_margin="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_25sdp"
+        android:layout_marginEnd="@dimen/_25sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
         android:text="Register"
         android:id="@+id/btnRegister"
+        android:background="@drawable/custom_edit_text"
+        android:fontFamily="@font/nunitoextrabold"
+        android:textColor="#015B8B"
+        android:textSize="@dimen/_14ssp"
         />
+    
+    <LinearLayout
 
-    <Button
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_40sdp"
-        android:layout_margin="@dimen/_10sdp"
-        android:text="to Login"
-        android:id="@+id/btnToLogin"
-        />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/_10sdp">
 
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:background="@drawable/baseline_arrow_back_ios_24"
+            android:backgroundTint="@color/white"/>
+
+        <TextView
+            android:id="@+id/btnToLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test"
+            android:fontFamily="@font/nunitoextrabold"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
 </LinearLayout>

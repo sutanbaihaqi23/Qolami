@@ -1,6 +1,11 @@
 package com.example.TugasAkhir.qolami.ui.auth
 
+import android.graphics.Color
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.SpannableStringBuilder
+import android.text.style.ForegroundColorSpan
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -25,6 +30,21 @@ class RegisterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val spannableStringBuilder = SpannableStringBuilder()
+        val colorCode = 0xFF3300FF.toInt()
+        spannableStringBuilder.append("Already have an account?")
+        val logintext= SpannableString(" Login Here")
+        logintext.setSpan(
+            ForegroundColorSpan(colorCode),
+            0,
+            logintext.length,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+        spannableStringBuilder.append(logintext)
+
+        binding.btnToLogin.text = spannableStringBuilder
+
+
 
         binding.btnRegister.setOnClickListener {
             val fullname = binding.etFullname.text.toString()

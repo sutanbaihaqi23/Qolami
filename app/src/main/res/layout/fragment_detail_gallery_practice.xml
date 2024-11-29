@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.latihan.gallery.DetailGalleryPracticeFragment"
+    android:background="#D0E3FF">
+
+    <TextView
+        android:id="@+id/title_detail_gallery_practice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hijaiyah Gallery"
+        android:fontFamily="@font/nunitoextrabold"
+        android:textColor="#015B8B"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/_25ssp"
+        android:layout_marginTop="@dimen/_13sdp"
+        />
+
+    <ImageView
+        android:layout_width="@dimen/_18sdp"
+        android:layout_height="@dimen/_18sdp"
+        android:src="@drawable/baseline_arrow_back_ios_24"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="@dimen/_22sdp"
+        android:layout_marginStart="@dimen/_15sdp"/>
+
+
+    <TextView
+        android:id="@+id/title_huruf_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alif"
+        android:fontFamily="@font/nunitoextrabold"
+        android:textColor="#015B8B"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/title_detail_gallery_practice"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:textSize="@dimen/_25ssp"/>
+
+    <ImageView
+        android:id="@+id/btn_speaker_detailGallery"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:src="@drawable/ic_speaker"
+        android:layout_toLeftOf="@id/title_huruf_detail"
+        android:layout_below="@+id/title_detail_gallery_practice"
+        android:layout_marginTop="@dimen/_48sdp"
+        android:layout_marginEnd="@dimen/_40sdp"
+        />
+
+    <ImageView
+        android:id="@+id/btn_eraser_detailGallery"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:src="@drawable/eraser"
+        android:layout_toRightOf="@id/title_huruf_detail"
+        android:layout_below="@+id/title_detail_gallery_practice"
+        android:layout_marginTop="@dimen/_48sdp"
+        android:layout_marginStart="@dimen/_40sdp"
+        />
+
+    <TextView
+        android:id="@+id/tv_command"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Trace the Character !"
+        android:fontFamily="@font/nunitoextrabold"
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/title_huruf_detail"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:textSize="@dimen/_16ssp"/>
+
+    <FrameLayout
+        android:layout_below="@id/tv_command"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/detail_gallery_practice_writing_layout"
+        android:layout_width="@dimen/_260sdp"
+        android:layout_height="@dimen/_200sdp"
+        android:background="@drawable/rounded_layout"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_5sdp">
+
+
+        <ImageView
+            android:layout_margin="@dimen/_40sdp"
+            android:id="@+id/gif_gallery_practice"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/alif"
+            app:tint="@color/black"
+            android:scaleType="fitCenter"
+            android:alpha="0.7"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <ImageView
+                android:id="@+id/solid_view_lines"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_4sdp"
+                android:background="@drawable/dashed_line_2"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/_40sdp"
+                />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_7sdp"
+                android:background="@drawable/dashed_line"
+                android:layout_above="@id/solid_view_lines"
+                android:layout_marginBottom="@dimen/_20sdp"/>
+        </RelativeLayout>
+
+        <com.example.TugasAkhir.qolami.customview.DrawingView
+            android:id="@+id/drawing_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@android:color/transparent" />
+    </FrameLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_check_detailGallery"
+        android:layout_width="@dimen/_230sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/detail_gallery_practice_writing_layout"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="Check"
+        android:fontFamily="@font/nunitoextrabold"
+        android:textSize="@dimen/_12ssp"
+        android:background="@drawable/custom_button_settings"
+        android:backgroundTint="#32B8FF"
+        android:textColor="@color/white"
+        />
+    <TextView
+        android:id="@+id/tv_accuracy_detailGallery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_check_detailGallery"
+        android:layout_centerHorizontal="true"
+        android:text="Accuracy : "
+        android:fontFamily="@font/nunitoextrabold"
+        android:textColor="#015B8B"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textSize="@dimen/_15ssp"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_save_detailGallery"
+        android:layout_width="@dimen/_230sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tv_accuracy_detailGallery"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="Save"
+        android:fontFamily="@font/nunitoextrabold"
+        android:textSize="@dimen/_12ssp"
+        android:background="@drawable/custom_button_settings"
+        android:backgroundTint="#32B8FF"
+        android:textColor="@color/white"
+        />
+
+
+</RelativeLayout>

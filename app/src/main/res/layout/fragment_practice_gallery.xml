@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.latihan.gallery.PracticeGalleryFragment"
+    android:background="#00BFFF">
+
+    <TextView
+        android:id="@+id/title_gallery_practice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="Practice Gallery"
+        android:fontFamily="@font/nunitoextrabold"
+        android:textSize="@dimen/_20ssp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:layout_marginTop="@dimen/_10sdp"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/cv_subtitle_practice_gallery"
+        app:cardCornerRadius="@dimen/_20sdp"
+        app:cardBackgroundColor="#D0E3FF"
+        android:translationY="@dimen/_90sdp"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_gallery_practice"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_380sdp"
+                android:layout_marginTop="@dimen/_45sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                tools:listitem="@layout/item_gallery_practice"
+                />
+        </LinearLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:layout_gravity="center_horizontal"
+        app:cardCornerRadius="@dimen/_10sdp"
+        android:layout_below="@+id/title_gallery_practice"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/cv_subtitle_practice_gallery">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Hijaiyah Alphabet"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunitoregular"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold"/>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+</RelativeLayout>

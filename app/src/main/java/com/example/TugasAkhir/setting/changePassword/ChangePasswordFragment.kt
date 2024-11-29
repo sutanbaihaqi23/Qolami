@@ -1,4 +1,4 @@
-package com.example.TugasAkhir.qolami.ui.changePassword
+package com.example.TugasAkhir.setting.changePassword
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
