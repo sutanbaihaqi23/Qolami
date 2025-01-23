@@ -143,9 +143,10 @@
             android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginEnd="@dimen/_20sdp"
             android:background="@drawable/rounded_layout"
-            android:text="Practice"
+            android:text="@string/practice_text"
+            android:textAllCaps="false"
             android:fontFamily="@font/nunitoextrabold"
-            android:textSize="@dimen/_15ssp"
+            android:textSize="@dimen/_17ssp"
             android:textColor="#32B8FF"/>
 
         <TextView

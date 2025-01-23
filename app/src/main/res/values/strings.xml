@@ -12,4 +12,9 @@
     <string name="already_have_Account_ask_text">Sudah Punya Akun ?, Masuk di sini</string>
     <string name="lesson_and_practice_text">Belajar dan Latihan</string>
     <string name="writing_test_text">Ujian Menulis</string>
+    <string name="change_password_text">Ganti Password</string>
+    <string name="application_information_text">Informasi Aplikasi</string>
+    <string name="log_out_text">Keluar</string>
+    <string name="settings_text">Pengaturan</string>
+    <string name="practice_text">Latihan</string>
 </resources>

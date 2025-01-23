@@ -37,7 +37,7 @@ class DetailLessonFragment : Fragment() {
     ): View? {
         binding = FragmentDetailLessonBinding.inflate(inflater, container, false)
         drawingView = binding.drawingView
-        binding.tvAccuracy.text="Score : "
+        binding.tvAccuracy.text="Skor : "
 
 
 
@@ -85,7 +85,7 @@ class DetailLessonFragment : Fragment() {
                     Log.d("Result Log",result)
 
 
-                    binding.tvAccuracy.text="Score : "+getIndex.toString()+"%"
+                    binding.tvAccuracy.text="Skor : "+getIndex.toString()+"%"
 
 
                 } ?: run {
@@ -100,7 +100,7 @@ class DetailLessonFragment : Fragment() {
 
         binding.btnClearLesson.setOnClickListener {
             drawingView.clearCanvas()
-            binding.tvAccuracy.text="Score : "
+            binding.tvAccuracy.text="Skor : "
         }
 
         return binding.root
@@ -252,7 +252,7 @@ class DetailLessonFragment : Fragment() {
         binding.gifPelajaran.visibility = View.VISIBLE
 
 
-        binding.tvAccuracy.text = "Score : "
+        binding.tvAccuracy.text = "Skor : "
 
         // Perbarui tampilan untuk huruf baru
         binding.tvLatinHuruf.text = huruf[index]
