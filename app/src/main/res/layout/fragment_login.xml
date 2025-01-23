@@ -33,16 +33,18 @@
         android:inputType="textEmailAddress"
         android:background="@drawable/custom_edit_text"
         android:paddingStart="@dimen/_10sdp"
+        android:fontFamily="@font/nunitoextrabold"
         />
     <androidx.appcompat.widget.AppCompatEditText
         android:layout_width="match_parent"
         android:layout_height="@dimen/_40sdp"
         android:layout_margin="@dimen/_10sdp"
-        android:hint="Password"
+        android:hint="@string/password_text"
         android:id="@+id/etPassword"
         android:inputType="textPassword"
         android:background="@drawable/custom_edit_text"
         android:paddingStart="@dimen/_10sdp"
+        android:fontFamily="@font/nunitoextrabold"
         />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -51,7 +53,7 @@
         android:layout_marginTop="@dimen/_20sdp"
         android:layout_marginStart="@dimen/_10sdp"
         android:layout_marginEnd="@dimen/_10sdp"
-        android:text="Login"
+        android:text="@string/login_text"
         android:id="@+id/btnLogin"
         android:textColor="@color/white"
         android:fontFamily="@font/nunitoextrabold"
@@ -65,7 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_20sdp"
-        android:text="Don't have an account? Register in Here"
+        android:text="@string/doesnt_have_account_ask"
         android:fontFamily="@font/nunitoextrabold"
         android:textColor="#015B8B"
         />

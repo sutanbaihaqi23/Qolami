@@ -1,13 +1,129 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.TugasAkhir.setting.info.InfoFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    tools:context=".ui.setting.info.InfoFragment"
+    android:background="#D0E3FE">
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/btn_back_to_settings"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/baseline_arrow_back_ios_24"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="@dimen/_15sdp"/>
+
+        <TextView
+            android:id="@+id/info_aplikasi_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Info Aplikasi"
+            android:fontFamily="@font/nunitoextrabold"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/_22ssp"
+            android:layout_marginTop="@dimen/_10sdp"/>
+
+        <ImageView
+            android:id="@+id/qolami_logo"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_120sdp"
+            android:src="@drawable/qolami_logo"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/info_aplikasi_text"
+            android:layout_marginTop="@dimen/_15sdp"/>
+
+        <TextView
+            android:id="@+id/tentang_aplikasi_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tentang Aplikasi"
+            android:fontFamily="@font/nunitoextrabold"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/_14ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_below="@id/qolami_logo"/>
+
+        <TextView
+            android:id="@+id/desc_aplikasi_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/desc_aplikasi"
+            android:fontFamily="@font/nunitoregular"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/_10ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_below="@id/tentang_aplikasi_text"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:justificationMode="inter_word"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/title_dev_team"
+            android:text="Tim Pengembang"
+            android:fontFamily="@font/nunitoextrabold"
+            android:layout_below="@id/desc_aplikasi_text"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_dev_team"
+            android:text="© 2024, Q - Write "
+            android:fontFamily="@font/nunitoregular"
+            android:layout_below="@id/title_dev_team"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:textSize="@dimen/_10ssp"
+            android:textColor="#015B8B"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dev_team"
+            android:text="Muhammad Naufal \nSilva Octaviacantika \nMuhammad Sutan Baihaqi"
+            android:fontFamily="@font/nunitoregular"
+            android:layout_below="@id/tv_dev_team"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:textSize="@dimen/_10ssp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/ikuti_kami"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ikuti Kami"
+            android:layout_below="@id/desc_aplikasi_text"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/nunitoextrabold"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:textColor="@color/black"/>
+        
+        <ImageView
+            android:id="@+id/ic_youtube"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:src="@drawable/youtube"
+            android:layout_below="@id/ikuti_kami"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/_15sdp"
+            />
+
+
+
+    </RelativeLayout>
+
+</ScrollView>

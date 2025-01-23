@@ -42,6 +42,7 @@
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
                 tools:listitem="@layout/item_pelajaran"
+                android:layoutDirection="rtl"
                 />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -52,7 +53,7 @@
                 android:layout_gravity="center_horizontal"
                 android:text="Practice Gallery"
                 android:fontFamily="@font/nunitoextrabold"
-
+                android:background="@drawable/rounded_white"
                 />
         </LinearLayout>
 

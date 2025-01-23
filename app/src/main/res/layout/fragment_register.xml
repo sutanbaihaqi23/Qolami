@@ -1,107 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.auth.RegisterFragment"
     android:orientation="vertical"
-    android:background="@drawable/bg_register2"
-    android:gravity="bottom">
+    android:background="#D0E3FF"
+    android:gravity="top">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_40sdp"
-        android:layout_marginStart="@dimen/_25sdp"
-        android:layout_marginEnd="@dimen/_25sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginBottom="@dimen/_10sdp"
-        android:hint="Fullname"
-        android:id="@+id/etFullname"
-        android:inputType="textPersonName"
-        android:background="@drawable/custom_edit_text"
-        android:fontFamily="@font/nunitoextrabold"
-        android:paddingStart="@dimen/_7sdp"
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_40sdp"
-        android:layout_marginStart="@dimen/_25sdp"
-        android:layout_marginEnd="@dimen/_25sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginBottom="@dimen/_10sdp"
-        android:hint="Email"
-        android:id="@+id/etEmail"
-        android:inputType="textEmailAddress"
-        android:background="@drawable/custom_edit_text"
-        android:fontFamily="@font/nunitoextrabold"
-        android:paddingStart="@dimen/_7sdp"
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_40sdp"
-        android:layout_marginStart="@dimen/_25sdp"
-        android:layout_marginEnd="@dimen/_25sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginBottom="@dimen/_10sdp"
-        android:hint="Password"
-        android:id="@+id/etPassword"
-        android:inputType="textPassword"
-        android:background="@drawable/custom_edit_text"
-        android:fontFamily="@font/nunitoextrabold"
-        android:paddingStart="@dimen/_7sdp"
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_40sdp"
-        android:layout_marginStart="@dimen/_25sdp"
-        android:layout_marginEnd="@dimen/_25sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginBottom="@dimen/_10sdp"
-        android:hint="Confirm Password"
-        android:id="@+id/etConfirmPassword"
-        android:inputType="textPassword"
-        android:background="@drawable/custom_edit_text"
-        android:fontFamily="@font/nunitoextrabold"
-        android:paddingStart="@dimen/_7sdp"
-        />
-    <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_40sdp"
-        android:layout_marginStart="@dimen/_25sdp"
-        android:layout_marginEnd="@dimen/_25sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginBottom="@dimen/_10sdp"
-        android:text="Register"
-        android:id="@+id/btnRegister"
-        android:background="@drawable/custom_edit_text"
-        android:fontFamily="@font/nunitoextrabold"
-        android:textColor="#015B8B"
-        android:textSize="@dimen/_14ssp"
-        />
-    
     <LinearLayout
-
+        android:id="@+id/toplayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="@dimen/_10sdp">
-
+        android:orientation="vertical">
         <ImageView
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
-            android:background="@drawable/baseline_arrow_back_ios_24"
-            android:backgroundTint="@color/white"/>
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_200sdp"
+            android:src="@drawable/qolami_logo"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_17sdp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginEnd="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:hint="@string/fullname_text"
+            android:id="@+id/etFullname"
+            android:inputType="textPersonName"
+            android:background="@drawable/custom_edit_text"
+            android:fontFamily="@font/nunitoextrabold"
+            android:paddingStart="@dimen/_7sdp"
+
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginEnd="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:hint="Email"
+            android:id="@+id/etEmail"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/custom_edit_text"
+            android:fontFamily="@font/nunitoextrabold"
+            android:paddingStart="@dimen/_7sdp"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginEnd="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:hint="@string/password_text"
+            android:id="@+id/etPassword"
+            android:inputType="textPassword"
+            android:background="@drawable/custom_edit_text"
+            android:fontFamily="@font/nunitoextrabold"
+            android:paddingStart="@dimen/_7sdp"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginEnd="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:hint="@string/confirm_password_text"
+            android:id="@+id/etConfirmPassword"
+            android:inputType="textPassword"
+            android:background="@drawable/custom_edit_text"
+            android:fontFamily="@font/nunitoextrabold"
+            android:paddingStart="@dimen/_7sdp"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_25sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/custom_button_settings"
+            android:fontFamily="@font/nunitoextrabold"
+            android:text="@string/daftar_text"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14ssp" />
 
         <TextView
             android:id="@+id/btnToLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Test"
+            android:text="@string/already_have_Account_ask_text"
             android:fontFamily="@font/nunitoextrabold"
             android:textSize="@dimen/_12ssp"
-            android:textColor="@color/white"
-            android:layout_gravity="center"
+            android:textColor="#015B8B"
+            android:layout_gravity="center_horizontal"
             android:textStyle="bold"
             />
     </LinearLayout>
-</LinearLayout>
+</RelativeLayout>

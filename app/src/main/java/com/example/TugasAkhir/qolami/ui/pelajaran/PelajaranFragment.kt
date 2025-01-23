@@ -21,8 +21,8 @@ class PelajaranFragment : Fragment() {
 
         val hurufList = listOf(
             HurufModel("Alif", R.drawable.alif),
-            HurufModel("Ba", R.drawable.ba),
-            HurufModel("Ta", R.drawable.ta),
+            HurufModel("Kaf", R.drawable.kaf),
+            HurufModel("Lam", R.drawable.lam),
             // Tambahkan huruf lainnya
         )
 

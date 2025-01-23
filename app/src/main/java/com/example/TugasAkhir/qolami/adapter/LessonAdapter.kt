@@ -31,7 +31,7 @@ class LessonAdapter(
 
     override fun onBindViewHolder(holder: LessonViewHolder, position: Int) {
         val lesson = lessons[position]
-        holder.lessonName.text = lesson.name
+        holder.lessonName.text = lesson.lessonName
 
         val images = lesson.images
         if (images.isNotEmpty()) {

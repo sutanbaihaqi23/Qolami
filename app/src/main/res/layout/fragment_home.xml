@@ -83,13 +83,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lesson and Practice"
+                android:text="@string/lesson_and_practice_text"
                 android:fontFamily="@font/nunitoextrabold"
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@id/img_lesson"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_15ssp"/>
+                android:textSize="@dimen/_17ssp"/>
 
         </RelativeLayout>
 
@@ -121,13 +121,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Writing Test"
+                android:text="@string/writing_test_text"
                 android:fontFamily="@font/nunitoextrabold"
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@id/img_test"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_15ssp"/>
+                android:textSize="@dimen/_17ssp"/>
 
         </RelativeLayout>
 

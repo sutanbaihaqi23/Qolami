@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_160sdp"
+    android:layout_height="@dimen/_150sdp"
+    android:layout_gravity="center"
+    android:background="@android:color/transparent"
+    android:paddingStart="@dimen/_60sdp"
+    android:paddingEnd="@dimen/_60sdp"
+    android:paddingTop="@dimen/_40sdp"
+    android:paddingBottom="@dimen/_40sdp"
+    >
+
+    <TextView
+        android:id="@+id/tv_text_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Score"
+        android:fontFamily="@font/poppinsregular"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16ssp"
+        android:layout_marginTop="@dimen/_7sdp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_score"
+        android:fontFamily="@font/poppinsregular"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tv_text_score"
+        android:textColor="@color/white"
+        android:text="0%"
+        android:textSize="@dimen/_30ssp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/feedback_condition"
+        android:fontFamily="@font/poppinsextrabold"
+        android:text="Bad"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tv_score"
+        android:textSize="@dimen/_15ssp"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_48sdp"
+        android:layout_below="@id/feedback_condition"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@drawable/rounded_layout"
+        android:fontFamily="@font/poppinsbold"
+        android:text="Next"
+        android:id="@+id/btn_next_dialog"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_15ssp"/>
+
+</RelativeLayout>

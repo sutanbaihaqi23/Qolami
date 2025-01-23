@@ -29,6 +29,12 @@ class AuthViewModel : ViewModel() {
        }
    }
 
+    fun getUserUid(): String? {
+        return auth.currentUser?.uid ?: throw IllegalStateException("User is not logged in.")
+    }
+
+
+
     fun changePassword(oldPassword: String, newPassword: String, onComplete: (Boolean, String?) -> Unit) {
         val currentUser = auth.currentUser
         if (currentUser != null) {

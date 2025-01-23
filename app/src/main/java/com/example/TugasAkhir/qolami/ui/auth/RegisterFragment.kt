@@ -11,9 +11,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.addCallback
 import androidx.lifecycle.ViewModelProvider
 import com.example.TugasAkhir.qolami.R
 import com.example.TugasAkhir.qolami.databinding.FragmentRegisterBinding
+import com.example.TugasAkhir.qolami.ui.home.HomeFragment
 import com.example.TugasAkhir.qolami.viewmodel.AuthViewModel
 
 class RegisterFragment : Fragment() {
@@ -30,21 +32,14 @@ class RegisterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val spannableStringBuilder = SpannableStringBuilder()
-        val colorCode = 0xFF3300FF.toInt()
-        spannableStringBuilder.append("Already have an account?")
-        val logintext= SpannableString(" Login Here")
-        logintext.setSpan(
-            ForegroundColorSpan(colorCode),
-            0,
-            logintext.length,
-            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
-        )
-        spannableStringBuilder.append(logintext)
-
-        binding.btnToLogin.text = spannableStringBuilder
 
 
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, LoginFragment())
+                .addToBackStack(null)
+                .commit()
+        }
 
         binding.btnRegister.setOnClickListener {
             val fullname = binding.etFullname.text.toString()

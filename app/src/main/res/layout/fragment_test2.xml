@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.test.Test2Fragment"
+    android:background="#D0E3FF">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="ScrollViewSize">
+        <ImageView
+            android:id="@+id/btn_back_to_home_test"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/baseline_arrow_back_ios_24"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"/>
+
+        <TextView
+            android:text="Writing Test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunitoextrabold"
+            android:textColor="#015B8B"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/_22ssp"
+            android:layout_marginTop="@dimen/_11sdp"/>
+
+        <ImageView
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:src="@drawable/clock"
+            android:layout_toLeftOf="@id/writing_test_timer"
+            android:layout_below="@id/btn_back_to_home_test"
+            android:layout_marginTop="@dimen/_27sdp"
+            android:layout_marginEnd="@dimen/_10sdp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/writing_test_timer"
+            android:text="10"
+            android:fontFamily="@font/nunitoextrabold"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/btn_back_to_home_test"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:textSize="@dimen/_30ssp"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            app:cardCornerRadius="10dp"
+            android:layout_centerHorizontal="true"
+            app:cardBackgroundColor="#32B8FF"
+            android:elevation="10dp"
+            android:layout_below="@id/writing_test_timer"
+            android:id="@+id/cv_middle_letter_question"
+            android:layout_marginTop="@dimen/_10sdp"
+            >
+            <ImageView
+                android:id="@+id/img_middle_letter_question"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_ask"
+                android:padding="@dimen/_3sdp"
+                app:tint="@color/white"
+                />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            app:cardCornerRadius="10dp"
+            android:layout_centerHorizontal="true"
+            app:cardBackgroundColor="#32B8FF"
+            android:elevation="10dp"
+            android:layout_below="@id/writing_test_timer"
+            android:id="@+id/cv_left_letter_question"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_toLeftOf="@id/cv_middle_letter_question"
+            android:layout_marginEnd="@dimen/_10sdp"
+            >
+            <ImageView
+                android:id="@+id/img_left_letter_question"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/ba"
+                android:padding="@dimen/_3sdp"
+                app:tint="@color/white" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            app:cardCornerRadius="10dp"
+            android:layout_centerHorizontal="true"
+            app:cardBackgroundColor="#32B8FF"
+            android:elevation="10dp"
+            android:layout_below="@id/writing_test_timer"
+            android:id="@+id/cv_right_letter_question"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_toRightOf="@id/cv_middle_letter_question"
+            android:layout_marginStart="@dimen/_10sdp"
+            >
+            <ImageView
+                android:id="@+id/img_right_letter_question"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/sa"
+                android:padding="@dimen/_3sdp"
+                app:tint="@color/white" />
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:id="@+id/ic_speaker"
+            android:background="@drawable/ic_speaker"
+            app:tint="@color/black"
+            android:layout_toStartOf="@id/cv_left_letter_question"
+            android:layout_below="@id/writing_test_timer"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_25sdp"
+            />
+
+        <ImageView
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:id="@+id/ic_eraser"
+            android:background="@drawable/eraser"
+            app:tint="@color/black"
+            android:layout_toEndOf="@id/cv_right_letter_question"
+            android:layout_below="@id/writing_test_timer"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_25sdp"
+            />
+
+        <TextView
+            android:id="@+id/comman_test_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Write the Character !"
+            android:textSize="@dimen/_20ssp"
+            android:fontFamily="@font/nunitoextrabold"
+            android:textColor="#015B8B"
+            android:layout_below="@id/cv_middle_letter_question"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_20sdp"
+            />
+
+        <FrameLayout
+            android:id="@+id/lesson_writing_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_180sdp"
+            android:background="@drawable/rounded_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/comman_test_question"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_70sdp">
+
+
+            <ImageView
+                android:layout_margin="@dimen/_40sdp"
+                android:id="@+id/gif_pelajaran"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:tint="@color/black"
+                android:scaleType="fitCenter"
+                android:alpha="0.7"/>
+
+
+
+            <com.example.TugasAkhir.qolami.customview.DrawingView
+                android:id="@+id/drawing_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_5sdp"
+                android:background="@android:color/transparent" />
+        </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/submit_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_65sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/lesson_writing_layout"
+            android:background="@drawable/custom_button_settings"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="Submit"
+            android:fontFamily="@font/nunitoextrabold"
+            android:textSize="@dimen/_15ssp"
+            android:textColor="@color/white"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="@dimen/_175sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_below="@id/submit_button"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:id="@+id/rv_number_question"
+            />
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+</ScrollView>

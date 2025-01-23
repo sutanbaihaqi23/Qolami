@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.test.WritingTestHomeFragment"
+    android:background="#D0E3FF">
+
+    <TextView
+        android:id="@+id/exam_title"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Writing Exam"
+        android:fontFamily="@font/nunitoextrabold"
+        android:textColor="#015B8B"
+        android:textSize="@dimen/_19ssp"
+        android:layout_marginTop="@dimen/_15sdp"
+        />
+    
+    <ImageView
+        android:id="@+id/btn_back_to_home"
+        android:layout_width="@dimen/_19sdp"
+        android:layout_height="@dimen/_19sdp"
+        android:src="@drawable/baseline_arrow_back_ios_24"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginStart="@dimen/_10sdp"/>
+
+    <ImageView
+        android:id="@+id/img_lesson_exam"
+        android:layout_width="@dimen/_170sdp"
+        android:layout_height="@dimen/_170sdp"
+        android:src="@drawable/lesson_img"
+        android:layout_below="@id/exam_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_30sdp"
+        />
+    
+    <LinearLayout
+        android:layout_width="@dimen/_230sdp"
+        android:layout_height="@dimen/_210sdp"
+        android:background="@drawable/exam_shape"
+        android:elevation="@dimen/_10sdp"
+        android:layout_below="@id/img_lesson_exam"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/_10sdp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Writing Exam"
+            android:fontFamily="@font/nunitoextrabold"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_20ssp"
+            android:layout_marginTop="@dimen/_10sdp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Duration : 10 Second "
+            android:fontFamily="@font/nunitoextrabold"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_17ssp"
+            android:layout_marginTop="@dimen/_13sdp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Question : 10 "
+            android:layout_marginStart="@dimen/_15sdp"
+            android:fontFamily="@font/nunitoextrabold"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_17ssp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textAlignment="textStart"
+            />
+        
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:text="Start"
+            android:fontFamily="@font/nunitoextrabold"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:id="@+id/btn_start_exam"
+            android:background="@drawable/rounded_white"
+            android:textSize="@dimen/_12ssp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:text="History"
+            android:fontFamily="@font/nunitoextrabold"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:id="@+id/btn_History_exam"
+            android:background="@drawable/rounded_white"
+            android:textSize="@dimen/_12ssp"/>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/nav_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        >
+
+        <ImageView
+            android:id="@+id/nav_ic_practice"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/ic_practice"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_100sdp"
+            android:layout_alignParentStart="true"
+            />
+        <ImageView
+            android:id="@+id/nav_ic_test"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/ic_test"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/_100sdp"
+            android:layout_centerVertical="true"
+            />
+    </RelativeLayout>
+</RelativeLayout>

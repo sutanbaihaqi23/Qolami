@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.addCallback
 import androidx.lifecycle.ViewModelProvider
 
 import com.example.TugasAkhir.qolami.R
@@ -28,6 +29,10 @@ class LoginFragment : Fragment() {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
         return binding.root
     }
+
+
+
+        // Handle tombol back dari perangkat
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -56,6 +61,10 @@ class LoginFragment : Fragment() {
                .replace(R.id.fragmentContainer,registerFragment)
                .addToBackStack(null)
                .commit()
+        }
+
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
+            requireActivity().finish()
         }
     }
 

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.test.ResultTestFragment"
+    android:background="#D0E3FF"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_55sdp"
+            android:background="@color/white"
+            android:id="@+id/top_layout">
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:src="@drawable/baseline_arrow_back_ios_24"
+                app:tint="#32B8FF"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:id="@+id/btn_back_to_test"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Result"
+                android:textColor="#32B8FF"
+                android:fontFamily="@font/nunitoextrabold"
+                android:layout_centerInParent="true"
+                android:textSize="@dimen/_25ssp"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_85sdp"
+            android:background="@drawable/rounded_bottom_layout"
+            android:backgroundTint="#32B8FF"
+            android:layout_below="@id/top_layout"
+            android:id="@+id/info_layout">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Finished"
+                android:fontFamily="@font/nunitoextrabold"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_20ssp"
+                android:layout_marginStart="@dimen/_60sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:id="@+id/tv_text_finished"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_text_score"
+                android:text="Score"
+                android:fontFamily="@font/nunitoextrabold"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_20ssp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/_65sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                />
+
+            <TextView
+                android:id="@+id/tv_finished"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_text_finished"
+                android:layout_marginStart="@dimen/_60sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:fontFamily="@font/nunitoextrabold"
+                android:text="10 / 10"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_25ssp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_score"
+                android:text="10%"
+                android:fontFamily="@font/nunitoextrabold"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_25ssp"
+                android:layout_below="@id/tv_text_score"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/_60sdp"/>
+        </RelativeLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rv_result_test"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            android:layout_below="@id/info_layout"/>
+
+
+
+
+        <RelativeLayout
+            android:id="@+id/nav_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@id/save_layout"
+            >
+
+            <ImageView
+                android:id="@+id/nav_ic_practice"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:src="@drawable/ic_practice"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_100sdp"
+                android:layout_alignParentStart="true"
+                />
+            <ImageView
+                android:id="@+id/nav_ic_test"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:src="@drawable/ic_test"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/_100sdp"
+                android:layout_centerVertical="true"
+                />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/save_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_below="@id/rv_result_test"
+            android:background="@drawable/rounded_top_layout"
+            >
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_save_result_test"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:text="Save"
+                android:fontFamily="@font/poppinsbold"
+                android:textColor="#32B8FF"
+                android:background="@drawable/custom_button"
+                android:backgroundTint="@color/white"
+                android:textSize="@dimen/_13ssp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_40sdp"
+                android:layout_alignParentStart="true"
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_restart_test"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:text="Start Again"
+                android:fontFamily="@font/poppinsbold"
+                android:textColor="#32B8FF"
+                android:background="@drawable/custom_button"
+                android:backgroundTint="@color/white"
+                android:textSize="@dimen/_13ssp"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_40sdp"
+                android:layout_alignParentEnd="true"
+                />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</ScrollView>

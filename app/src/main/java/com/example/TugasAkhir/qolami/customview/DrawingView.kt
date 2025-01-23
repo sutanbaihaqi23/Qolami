@@ -14,6 +14,13 @@ class DrawingView @JvmOverloads constructor(
     attrs: AttributeSet? = null
 ) : View(context, attrs) {
 
+    private var isDrawingLine = false
+    private var lastTouchX = 0f
+    private var lastTouchY = 0f
+    private val touchThreshold = 10f
+
+
+
     private var path = android.graphics.Path()
     private val paint = Paint().apply {
         color = Color.BLACK
@@ -45,12 +52,52 @@ class DrawingView @JvmOverloads constructor(
         val touchY = event.y
 
         when (event.action) {
-            MotionEvent.ACTION_DOWN -> path.moveTo(touchX, touchY)
-            MotionEvent.ACTION_MOVE -> path.lineTo(touchX, touchY)
-            MotionEvent.ACTION_UP -> drawCanvas?.drawPath(path, paint)
+            MotionEvent.ACTION_DOWN -> {
+                isDrawingLine = false
+                lastTouchX = touchX
+                lastTouchY = touchY
+                path.moveTo(touchX, touchY)
+            }
+            MotionEvent.ACTION_MOVE -> {
+                val dx = Math.abs(touchX - lastTouchX)
+                val dy = Math.abs(touchY - lastTouchY)
+                if (dx >= touchThreshold || dy >= touchThreshold) {
+                    if (!isDrawingLine) {
+                        // Hapus titik awal jika mulai menggambar garis
+                        drawCanvas?.drawPath(path, paint)
+                        path.reset()
+                        path.moveTo(lastTouchX, lastTouchY)
+                        isDrawingLine = true
+                    }
+                    path.lineTo(touchX, touchY)
+                    lastTouchX = touchX
+                    lastTouchY = touchY
+                }
+            }
+            MotionEvent.ACTION_UP -> {
+                if (!isDrawingLine) {
+                    // Gambar titik jika tidak ada gerakan
+                    drawCanvas?.drawCircle(touchX, touchY, paint.strokeWidth / 2, paint)
+                } else {
+                    drawCanvas?.drawPath(path, paint)
+                }
+            }
         }
         invalidate()
         return true
+    }
+
+
+    fun getBitmap(): Bitmap? {
+        return canvasBitmap
+    }
+
+    fun getBitmapWithBackground(): Bitmap {
+        val outputBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
+        val canvas = Canvas(outputBitmap)
+        canvas.drawColor(Color.WHITE) // Latar belakang putih
+        canvas.drawBitmap(canvasBitmap!!, 0f, 0f, null)
+        return outputBitmap
     }
 
     fun clearCanvas() {

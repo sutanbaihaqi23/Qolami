@@ -2,4 +2,14 @@
     <string name="app_name">Qolami</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="desc_aplikasi">Qolami Project adalah aplikasi yang bertujuan sebagai pembelajaran bahasa arab yang menggunakan Metode Qolami, karena metode Qolami itu sendiri belum pernah di pakai oleh pihak manapun sehingga membuat kami sebagai pengembangan aplikasi perangkat lunak menuangkan metodi Qolami ini kedalam suatu aplikasi, Sedangkan dari sisi pengguna aplikasi ini bertujuan untuk menjadikan aplikasi sebagai bentuk media pembelajaran dari berbagai usia bahkan bisa digunakan untuk para Guru agama untuk mengajari murid nya dengan mengenal metode Qolami ini. Metode Qolami juga dikenal dapat diartikan secara KBBI adalah Menulis dengan metode ini Qolami juga berbeda dengan metode yang lainya pastinya Maka dari itu kami sebagai Developer ingin menuangkan Metode ini kedalam Aplikasi berbentuk Mobile karena akan mudah diakses untuk semua pengguna</string>
+    <string name="password_text">Kata Sandi</string>
+    <string name="login_text">Masuk</string>
+    <string name="doesnt_have_account_ask">Tidak Punya Akun ? Daftar di Sini !</string>
+    <string name="fullname_text">Nama Lengkap</string>
+    <string name="confirm_password_text">Konfirmasi Kata Sandi</string>
+    <string name="daftar_text">Daftar</string>
+    <string name="already_have_Account_ask_text">Sudah Punya Akun ?, Masuk di sini</string>
+    <string name="lesson_and_practice_text">Belajar dan Latihan</string>
+    <string name="writing_test_text">Ujian Menulis</string>
 </resources>

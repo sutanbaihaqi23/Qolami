@@ -20,6 +20,7 @@
         />
 
     <ImageView
+        android:id="@+id/ic_back"
         android:layout_width="@dimen/_18sdp"
         android:layout_height="@dimen/_18sdp"
         android:src="@drawable/baseline_arrow_back_ios_24"
@@ -47,7 +48,7 @@
         android:src="@drawable/ic_speaker"
         android:layout_toLeftOf="@id/title_huruf_detail"
         android:layout_below="@+id/title_detail_gallery_practice"
-        android:layout_marginTop="@dimen/_48sdp"
+        android:layout_marginTop="@dimen/_58sdp"
         android:layout_marginEnd="@dimen/_40sdp"
         />
 
@@ -58,7 +59,7 @@
         android:src="@drawable/eraser"
         android:layout_toRightOf="@id/title_huruf_detail"
         android:layout_below="@+id/title_detail_gallery_practice"
-        android:layout_marginTop="@dimen/_48sdp"
+        android:layout_marginTop="@dimen/_58sdp"
         android:layout_marginStart="@dimen/_40sdp"
         />
 
@@ -90,7 +91,6 @@
             android:id="@+id/gif_gallery_practice"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/alif"
             app:tint="@color/black"
             android:scaleType="fitCenter"
             android:alpha="0.7"/>

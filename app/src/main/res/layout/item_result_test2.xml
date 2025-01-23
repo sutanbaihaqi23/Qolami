@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_110sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/_5sdp"
+    app:cardBackgroundColor="#93D9FF"
+    app:cardCornerRadius="@dimen/_10sdp"
+    app:cardElevation="@dimen/_10sdp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_number_question"
+            android:text="1"
+            android:fontFamily="@font/nunitoextrabold"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_17ssp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"/>
+        <ImageView
+            android:id="@+id/img_bitmap"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:background="@color/white"
+            android:layout_toEndOf="@id/tv_number_question"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            />
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_boolean_question"
+            android:text="Correct !"
+            android:fontFamily="@font/nunitoextrabold"
+            android:textColor="@color/black"
+            android:layout_toEndOf="@id/img_bitmap"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:textSize="@dimen/_15ssp"
+            android:layout_marginTop="@dimen/_5sdp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_letter"
+            android:text="Letter"
+            android:fontFamily="@font/nunitoextrabold"
+            android:textColor="@color/black"
+            android:layout_below="@id/img_bitmap"
+            android:layout_toEndOf="@id/tv_number_question"
+            android:layout_marginStart="@dimen/_45sdp"
+            android:textSize="@dimen/_10ssp"
+            />
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            app:cardCornerRadius="10dp"
+            app:cardBackgroundColor="#32B8FF"
+            android:elevation="10dp"
+            android:layout_toEndOf="@id/img_bitmap"
+            android:id="@+id/cv_last_letter_question"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_below="@id/tv_boolean_question"
+
+            >
+            <ImageView
+                android:id="@+id/img_last_letter_question"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/sa"
+                android:padding="@dimen/_3sdp"
+                app:tint="@color/white" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            app:cardCornerRadius="10dp"
+            app:cardBackgroundColor="#32B8FF"
+            android:elevation="10dp"
+            android:layout_toEndOf="@id/cv_last_letter_question"
+            android:id="@+id/cv_middle_letter_question"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_below="@id/tv_boolean_question"
+            >
+            <ImageView
+                android:id="@+id/img_middle_letter_question"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_ask"
+                android:padding="@dimen/_3sdp"
+                app:tint="@color/white"/>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            app:cardCornerRadius="10dp"
+            app:cardBackgroundColor="#32B8FF"
+            android:elevation="10dp"
+            android:layout_toEndOf="@id/cv_middle_letter_question"
+            android:id="@+id/cv_start_letter_question"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_below="@id/tv_boolean_question"
+            >
+            <ImageView
+                android:id="@+id/img_start_letter_question"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/ba"
+                android:padding="@dimen/_3sdp"
+                app:tint="@color/white"/>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Predicted : "
+            android:fontFamily="@font/nunitoextrabold"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10ssp"
+            android:layout_below="@id/cv_last_letter_question"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_toEndOf="@id/img_bitmap"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:id="@+id/tv_predicted_label"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Accuracy : "
+            android:fontFamily="@font/nunitoextrabold"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10ssp"
+            android:layout_below="@id/tv_predicted_label"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_toEndOf="@id/img_bitmap"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:id="@+id/tv_accuracy"
+            />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

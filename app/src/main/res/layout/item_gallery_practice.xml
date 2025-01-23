@@ -11,8 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/img_gallery_practice"
-        android:scaleType="fitCenter"
+        android:scaleType="centerCrop"
         app:tint="@color/black"
-        android:layout_margin="@dimen/_8sdp"/>
+        android:layout_margin="@dimen/_3sdp"
+        android:padding="8dp"/>
 
 </androidx.cardview.widget.CardView>
