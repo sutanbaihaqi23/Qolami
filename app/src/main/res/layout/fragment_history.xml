@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tv_text_history"
-        android:text="History"
+        android:text="@string/history_text"
         android:fontFamily="@font/nunitoextrabold"
         android:layout_centerHorizontal="true"
         android:textSize="@dimen/_23ssp"

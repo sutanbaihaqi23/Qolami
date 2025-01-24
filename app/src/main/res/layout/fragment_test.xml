@@ -20,7 +20,7 @@
             android:layout_marginTop="@dimen/_15sdp"/>
 
         <TextView
-            android:text="Writing Test"
+            android:text="@string/writing_test_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/nunitoextrabold"
@@ -91,8 +91,8 @@
             android:id="@+id/comman_test_question"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Write the Character !"
-            android:textSize="@dimen/_20ssp"
+            android:text="@string/gambar_lah_huruf_di_atas"
+            android:textSize="@dimen/_17ssp"
             android:fontFamily="@font/nunitoextrabold"
             android:textColor="#015B8B"
             android:layout_below="@id/letter_Question"
@@ -137,7 +137,7 @@
             android:layout_below="@+id/lesson_writing_layout"
             android:background="@drawable/custom_button_settings"
             android:layout_marginTop="@dimen/_15sdp"
-            android:text="Submit"
+            android:text="@string/submit_text"
             android:fontFamily="@font/nunitoextrabold"
             android:textSize="@dimen/_15ssp"
             android:textColor="@color/white"
