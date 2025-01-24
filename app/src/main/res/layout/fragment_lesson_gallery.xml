@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:text="Lesson Gallery"
+        android:text="@string/lesson_gallery_text"
         android:fontFamily="@font/nunitoextrabold"
         android:textSize="@dimen/_25ssp"
         android:layout_centerHorizontal="true"
@@ -51,7 +51,7 @@
                 android:layout_height="@dimen/_50sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_gravity="center_horizontal"
-                android:text="Practice Gallery"
+                android:text="@string/practice_gallery_text"
                 android:fontFamily="@font/nunitoextrabold"
                 android:background="@drawable/rounded_white"
                 />
@@ -75,10 +75,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Hijaiyah Alphabet"
+            android:text="@string/hijaiyah_alphabet_text"
             android:textColor="#015B8B"
             android:fontFamily="@font/nunitoextrabold"
-            android:textSize="@dimen/_15ssp"/>
+            android:textSize="@dimen/_17ssp"/>
     </androidx.cardview.widget.CardView>
 
 

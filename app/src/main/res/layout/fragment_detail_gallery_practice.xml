@@ -11,7 +11,7 @@
         android:id="@+id/title_detail_gallery_practice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hijaiyah Gallery"
+        android:text="@string/hijaiyah_gallery_text"
         android:fontFamily="@font/nunitoextrabold"
         android:textColor="#015B8B"
         android:layout_centerHorizontal="true"
@@ -67,12 +67,13 @@
         android:id="@+id/tv_command"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Trace the Character !"
+        android:text="Gambar Huruf Hijaiyah diatas"
         android:fontFamily="@font/nunitoextrabold"
-        android:textColor="@color/black"
+        android:textColor="#015B8B"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/title_huruf_detail"
-        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
         android:textSize="@dimen/_16ssp"/>
 
     <FrameLayout
@@ -130,9 +131,9 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@id/detail_gallery_practice_writing_layout"
         android:layout_marginTop="@dimen/_10sdp"
-        android:text="Check"
+        android:text="@string/check_text"
         android:fontFamily="@font/nunitoextrabold"
-        android:textSize="@dimen/_12ssp"
+        android:textSize="@dimen/_15ssp"
         android:background="@drawable/custom_button_settings"
         android:backgroundTint="#32B8FF"
         android:textColor="@color/white"
@@ -143,7 +144,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/btn_check_detailGallery"
         android:layout_centerHorizontal="true"
-        android:text="Accuracy : "
+        android:text="@string/score_text"
         android:fontFamily="@font/nunitoextrabold"
         android:textColor="#015B8B"
         android:layout_marginTop="@dimen/_10sdp"
@@ -157,12 +158,13 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@id/tv_accuracy_detailGallery"
         android:layout_marginTop="@dimen/_10sdp"
-        android:text="Save"
+        android:text="@string/save_text"
         android:fontFamily="@font/nunitoextrabold"
-        android:textSize="@dimen/_12ssp"
+        android:textSize="@dimen/_15ssp"
         android:background="@drawable/custom_button_settings"
         android:backgroundTint="#32B8FF"
         android:textColor="@color/white"
+
         />
 
 

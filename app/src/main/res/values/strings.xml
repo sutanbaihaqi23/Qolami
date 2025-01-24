@@ -17,4 +17,11 @@
     <string name="log_out_text">Keluar</string>
     <string name="settings_text">Pengaturan</string>
     <string name="practice_text">Latihan</string>
+    <string name="lesson_gallery_text">Galeri Pelajaran</string>
+    <string name="hijaiyah_alphabet_text">Huruf Hijaiyah</string>
+    <string name="hijaiyah_gallery_text">Galeri Hijaiyah</string>
+    <string name="practice_gallery_text">Galeri Latihan</string>
+    <string name="check_text">Cek</string>
+    <string name="score_text">Skor :</string>
+    <string name="save_text">Simpan</string>
 </resources>

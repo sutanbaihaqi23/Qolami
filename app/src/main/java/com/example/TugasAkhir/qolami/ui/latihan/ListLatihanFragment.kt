@@ -66,7 +66,7 @@ class ListLatihanFragment : Fragment() {
             LessonItem("Pelajaran 18", listOf("Mim"), listOf("sound24.mp3"), listOf(R.drawable.mim, 0, 0), listOf(R.drawable.mimgif)),
             LessonItem("Pelajaran 19", listOf("HA"), listOf("sound27.mp3"), listOf(R.drawable.ha, 0, 0), listOf(R.drawable.hagif)),
             LessonItem("Pelajaran 20", listOf("Ya"), listOf("sound30.mp3"), listOf(R.drawable.ya, 0, 0), listOf(R.drawable.yagif)),
-            LessonItem("Your Hijaiyah Gallery", listOf(""), listOf("", "", ""), listOf(0, 0, 0), listOf(0))
+            LessonItem("Galeri Hijaiyah", listOf(""), listOf("", "", ""), listOf(0, 0, 0), listOf(0))
         )
 
         lessonAdapter = LessonAdapter(lessons) { lesson ->
@@ -76,7 +76,6 @@ class ListLatihanFragment : Fragment() {
             // Jika lesson terakhir, arahkan ke LessonGalleryFragment
             if (isLastLesson) {
                 val lessonGalleryFragment = LessonGalleryFragment()
-                val practiceGalleryFragment= PracticeGalleryFragment()
 
                 // Kirim data ke fragment jika diperlukan
                 val bundle = Bundle()
