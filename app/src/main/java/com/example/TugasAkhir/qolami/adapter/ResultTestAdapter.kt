@@ -67,10 +67,10 @@ class ResultTestAdapter(
         fun bind(item: TempResultTest) {
             tvNumberQuestion.text = item.numberTest.toString()
             imgBitmap.setImageBitmap(item.bitmapDrawingView)
-            tvBooleanQuestion.text = if (item.isCorrect) "Correct !" else "Incorrect !"
-            tvPredictedLabel.text = "Predicted : "+ item.predictedLabel
+            tvBooleanQuestion.text = if (item.isCorrect) "Benar !" else "Salah !"
+            tvPredictedLabel.text = "Prediksi Huruf : "+ item.predictedLabel
             tvLetter.text = item.letter
-            tvAccuracy.text = "Accuracy Predicted : "+(item.confidence)+"%"
+            tvAccuracy.text = "Skor : "+(item.confidence)+"%"
         }
     }
 
@@ -91,9 +91,9 @@ class ResultTestAdapter(
             tvNumberQuestion.text = item.numberTest.toString()
             imgBitmap.setImageBitmap(item.bitmapDrawingView)
             tvLetter.text = "${item.middleLetter}"
-            tvAccuracy.text = "Accuracy Predicted : "+(item.confidence)+"%"
-            tvBooleanQuestion.text = if (item.isCorrect) "Correct !" else "Incorrect !"
-            tvPredictedLabel.text = "Predicted : "+ item.predictedLabel
+            tvAccuracy.text = "Skor : "+(item.confidence)+"%"
+            tvBooleanQuestion.text = if (item.isCorrect) "Benar !" else "Salah !"
+            tvPredictedLabel.text = "Prediksi Huruf : "+ item.predictedLabel
 
             imgLastLetterQuestion.setImageResource(item.leftLetterImg)
             imgMiddleLetterQuestion.setImageResource(item.middleLetterImg)

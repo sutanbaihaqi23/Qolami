@@ -79,10 +79,10 @@ class DetailHistoryAdapter(
             tvNumberQuestion.text = item.numberTest.toString()
             val bitmap = BitmapFactory.decodeByteArray(item.bitmapDrawingView, 0, item.bitmapDrawingView.size)
             imgBitmap.setImageBitmap(bitmap)
-            tvBooleanQuestion.text = if (item.isCorrect) "Correct !" else "Incorrect !"
-            tvPredictedLabel.text = "Predicted : "+ item.predictedLabel
+            tvBooleanQuestion.text = if (item.isCorrect) "Benar !" else "Salah !"
+            tvPredictedLabel.text = "Prediksi Huruf : "+ item.predictedLabel
             tvLetter.text = item.letter
-            tvAccuracy.text = "Accuracy Predicted : "+(item.confidence)+"%"
+            tvAccuracy.text = "Skor : "+(item.confidence)+"%"
         }
     }
 
@@ -104,9 +104,9 @@ class DetailHistoryAdapter(
             val bitmap = BitmapFactory.decodeByteArray(item.bitmapDrawingView, 0, item.bitmapDrawingView.size)
             imgBitmap.setImageBitmap(bitmap)
             tvLetter.text = "${item.middleLetter}"
-            tvAccuracy.text = "Accuracy Predicted : "+(item.confidence)+"%"
-            tvBooleanQuestion.text = if (item.isCorrect) "Correct !" else "Incorrect !"
-            tvPredictedLabel.text = "Predicted : "+ item.predictedLabel
+            tvAccuracy.text = "Skor "+(item.confidence)+"%"
+            tvBooleanQuestion.text = if (item.isCorrect) "Benar !" else "Salah !"
+            tvPredictedLabel.text = "Prediksi Huruf : "+ item.predictedLabel
 
             item.leftLetterImg?.let { imgLastLetterQuestion.setImageResource(it) }
             item.middleLetterImg?.let { imgMiddleLetterQuestion.setImageResource(it) }

@@ -140,7 +140,7 @@ class TestFragment : Fragment() {
         } else {
             // Tes selesai
             timer?.cancel()
-            showTestCompletedDialog()
+
         }
     }
 
@@ -171,16 +171,16 @@ class TestFragment : Fragment() {
         startQuestion=0
         tempResultTests.clear()
         val dialog = AlertDialog.Builder(requireContext())
-            .setTitle("Quit Exam?")
-            .setMessage("Are you sure you want to Quit the exam?")
-            .setPositiveButton("Yes") { dialog, _ ->
+            .setTitle("Keluar Ujian ?")
+            .setMessage("Kamu Yakin ingin keluar dari Ujian ?")
+            .setPositiveButton("Iya") { dialog, _ ->
                 parentFragmentManager.beginTransaction()
                     .replace(R.id.fragmentContainer, WritingTestHomeFragment())
                     .addToBackStack(null)
                     .commit()
                 dialog.dismiss()
             }
-            .setNegativeButton("No") { dialog, _ ->
+            .setNegativeButton("Tidak") { dialog, _ ->
                 dialog.dismiss()
                 startTimer() // Jika Anda memiliki timer dan ingin melanjutkannya.
             }
@@ -194,15 +194,6 @@ class TestFragment : Fragment() {
     }
 
 
-    private fun showTestCompletedDialog() {
-        AlertDialog.Builder(requireContext())
-            .setTitle("Test Completed")
-            .setMessage("You have completed the test!\n\nCorrect Answers: $correctAnswers\nIncorrect Answers: $incorrectAnswers")
-            .setPositiveButton("OK") { _, _ ->
-                // Lakukan sesuatu, misalnya kembali ke home
-            }
-            .show()
-    }
 
     private fun displayQuestion() {
         // Menampilkan soal berdasarkan urutan acak dari randomQuestions
@@ -266,7 +257,7 @@ class TestFragment : Fragment() {
 
         // Set nilai pada dialog
         dialogScore.text = "$confidence%"
-        dialogFeedback.text = if (isCorrect) "Good Job!" else "Try Again"
+        dialogFeedback.text = if (isCorrect) "Kerja Bagus !" else "Ayo Coba Lagi !"
         dialogView.setBackgroundResource(
             if (isCorrect) R.drawable.rounded_layout_test_green else R.drawable.rounded_layout_test_red
         )

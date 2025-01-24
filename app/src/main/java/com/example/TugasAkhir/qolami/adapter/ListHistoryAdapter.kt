@@ -25,9 +25,9 @@ class ListHistoryAdapter(private val items: List<ListHistoryItem>, private val o
 
     inner class ViewHolder(private val binding: ItemListHistoryBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: ListHistoryItem) {
-            binding.tvHistoryNumber.text =  "Attempt to : "+item.historyNumber.toString()
-            binding.tvFinished.text = "Finished : " +item.finishedNumber
-            binding.tvScore.text = "Score : "+item.score.toString()
+            binding.tvHistoryNumber.text =  "Nomor : "+item.historyNumber.toString()
+            binding.tvFinished.text = "Terselesaikan : " +item.finishedNumber
+            binding.tvScore.text = "Skor : "+item.score.toString()
 
             // Set click listener
             itemView.setOnClickListener {
