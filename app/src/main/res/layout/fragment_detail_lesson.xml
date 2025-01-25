@@ -123,9 +123,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:tint="@color/black"
-                android:scaleType="fitXY"
+                android:scaleType="centerCrop"
                 android:alpha="0.9"
-                android:layout_marginTop="@dimen/_32sdp"/>
+                android:layout_marginTop="@dimen/_32sdp"
+                android:padding="@dimen/_5sdp"/>
 
             <com.example.TugasAkhir.qolami.customview.DrawingView
                 android:id="@+id/drawing_view"

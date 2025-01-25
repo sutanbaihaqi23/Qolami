@@ -10,11 +10,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.addCallback
 import androidx.core.view.isVisible
 import com.bumptech.glide.Glide
 import com.example.TugasAkhir.qolami.R
 import com.example.TugasAkhir.qolami.customview.DrawingView
 import com.example.TugasAkhir.qolami.databinding.FragmentDetailLessonBinding
+import com.example.TugasAkhir.qolami.ui.home.HomeFragment
 import com.example.TugasAkhir.qolami.util.ModelUtil
 
 import org.tensorflow.lite.Interpreter
@@ -45,10 +47,21 @@ class DetailLessonFragment : Fragment() {
         tflite = ModelUtil.loadModel(requireContext(), "model_hijaiyah_baru_dataset_ditambah.tflite")
 
 
+
+
         // Ambil data huruf dan gambar dari arguments
         val huruf = arguments?.getStringArrayList("lessonTexts")
         val hurufImageRes = arguments?.getIntegerArrayList("lessonimg")
         val audio=arguments?.getStringArrayList("lessonAudio")
+
+
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
+            if (isPhaseOne){
+                requireActivity().supportFragmentManager.popBackStack()
+            }else {
+                updateUI(huruf!!, hurufImageRes!!, audio!!)
+            }
+        }
 
         binding.icArrowBackPelajaran.setOnClickListener {
             requireActivity().supportFragmentManager.popBackStack()

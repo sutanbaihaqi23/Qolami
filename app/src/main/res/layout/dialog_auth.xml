@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="#32B8FF"
+    android:layout_gravity="center"
+    app:cardCornerRadius="@dimen/_10sdp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/ic_attention"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:src="@drawable/attention"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_8sdp"/>
+
+        <TextView
+            android:id="@+id/dialog_auth_message"
+            android:layout_below="@id/ic_attention"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinsextrabold"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_11ssp"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/dialog_auth_button"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:background="@drawable/rounded_white"
+            android:layout_below="@id/dialog_auth_message"
+            android:layout_centerHorizontal="true"
+            android:text="OK"
+            android:fontFamily="@font/poppinsextrabold"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_5sdp"/>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
