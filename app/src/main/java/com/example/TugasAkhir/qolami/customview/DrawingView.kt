@@ -102,8 +102,11 @@ class DrawingView @JvmOverloads constructor(
 
     fun clearCanvas() {
         path.reset()
-        canvasBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
-        drawCanvas = Canvas(canvasBitmap!!)
+        if (width > 0 && height > 0) {
+            canvasBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
+            drawCanvas = Canvas(canvasBitmap!!)
+        }
         invalidate()
     }
+
 }

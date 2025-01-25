@@ -64,7 +64,7 @@ class ListLatihanFragment : Fragment() {
             LessonItem("Pelajaran 16", listOf("Tzo", "Tho"), listOf("sound17.mp3", "sound16.mp3"), listOf(R.drawable.tzo, R.drawable.tho, 0), listOf(R.drawable.dhlogif, R.drawable.thogif)),
             LessonItem("Pelajaran 17", listOf("Shod", "Dhod"), listOf("sound14.mp3", "sound15.mp3"), listOf(R.drawable.shod, R.drawable.dzo, 0), listOf(R.drawable.shodgif, R.drawable.dhadgif)),
             LessonItem("Pelajaran 18", listOf("Mim"), listOf("sound24.mp3"), listOf(R.drawable.mim, 0, 0), listOf(R.drawable.mimgif)),
-            LessonItem("Pelajaran 19", listOf("HA"), listOf("sound27.mp3"), listOf(R.drawable.ha, 0, 0), listOf(R.drawable.hagif)),
+            LessonItem("Pelajaran 19", listOf("Ha"), listOf("sound27.mp3"), listOf(R.drawable.ha, 0, 0), listOf(R.drawable.hagif)),
             LessonItem("Pelajaran 20", listOf("Ya"), listOf("sound30.mp3"), listOf(R.drawable.ya, 0, 0), listOf(R.drawable.yagif)),
             LessonItem("Galeri Hijaiyah", listOf(""), listOf("", "", ""), listOf(0, 0, 0), listOf(0))
         )

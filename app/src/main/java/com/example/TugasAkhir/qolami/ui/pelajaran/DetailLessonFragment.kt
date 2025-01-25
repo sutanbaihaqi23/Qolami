@@ -26,6 +26,7 @@ class DetailLessonFragment : Fragment() {
     private lateinit var binding: FragmentDetailLessonBinding
     private lateinit var tflite: Interpreter
     private lateinit var utilModel: ModelUtil
+    private var currentBitmap: Bitmap? = null
     private var index=0
     private var isPhaseOne = true
     private var mediaPlayer: MediaPlayer? = null
@@ -77,7 +78,9 @@ class DetailLessonFragment : Fragment() {
             }else{
                 val bitmap = drawingView.getBitmapWithBackground()
                 bitmap?.let { bitmap ->
-                    val bytebuffer=ModelUtil.processImage(bitmap)
+                    currentBitmap = bitmap
+
+                    val bytebuffer=ModelUtil.processImage(currentBitmap!!)
                     val result=ModelUtil.runInference(tflite,bytebuffer)
 
 
@@ -162,7 +165,7 @@ class DetailLessonFragment : Fragment() {
             "Shod" -> R.drawable.shodgif
             "Dhod" -> R.drawable.dhadgif
             "Mim" -> R.drawable.mimgif
-            "HA" -> R.drawable.hagif
+            "Ha" -> R.drawable.hagif
             "Ya" -> R.drawable.yagif
             else -> R.drawable.alifgif// Default GIF jika huruf tidak ditemukan
         }
