@@ -34,6 +34,7 @@
             android:background="@drawable/custom_edit_text"
             android:fontFamily="@font/nunitoextrabold"
             android:paddingStart="@dimen/_7sdp"
+            android:paddingEnd="@dimen/_10sdp"
 
             />
         <EditText
@@ -49,6 +50,7 @@
             android:background="@drawable/custom_edit_text"
             android:fontFamily="@font/nunitoextrabold"
             android:paddingStart="@dimen/_7sdp"
+            android:paddingEnd="@dimen/_10sdp"
             />
         <EditText
             android:layout_width="match_parent"
@@ -63,6 +65,7 @@
             android:background="@drawable/custom_edit_text"
             android:fontFamily="@font/nunitoextrabold"
             android:paddingStart="@dimen/_7sdp"
+            android:paddingEnd="@dimen/_10sdp"
             />
         <EditText
             android:layout_width="match_parent"
@@ -77,6 +80,7 @@
             android:background="@drawable/custom_edit_text"
             android:fontFamily="@font/nunitoextrabold"
             android:paddingStart="@dimen/_7sdp"
+            android:paddingEnd="@dimen/_10sdp"
             />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -104,5 +108,6 @@
             android:layout_gravity="center_horizontal"
             android:textStyle="bold"
             />
+
     </LinearLayout>
 </RelativeLayout>

@@ -10,8 +10,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.addCallback
+import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
 import com.example.TugasAkhir.qolami.R
 import com.example.TugasAkhir.qolami.databinding.FragmentRegisterBinding
@@ -42,30 +44,50 @@ class RegisterFragment : Fragment() {
         }
 
         binding.btnRegister.setOnClickListener {
-            val fullname = binding.etFullname.text.toString()
-            val email = binding.etEmail.text.toString()
-            val password = binding.etPassword.text.toString()
-            val confPassword= binding.etConfirmPassword.text.toString()
+            val fullname = binding.etFullname.text.toString().trim()
+            val email = binding.etEmail.text.toString().trim()
+            val password = binding.etPassword.text.toString().trim()
+            val confPassword = binding.etConfirmPassword.text.toString().trim()
 
-            if (fullname.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty()&&confPassword.isNotEmpty()){
-                if (password == confPassword){
-                    viewModel.register(fullname, email, password) { success ->
+            // Validasi Input
+            when {
+                fullname.isEmpty() || fullname.length < 3 -> {
+                    binding.etFullname.error = "Nama lengkap harus diisi (minimal 3 karakter)."
+                }
+                !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches() -> {
+                    binding.etEmail.error = "Email tidak valid."
+                }
+                email.isEmpty() ->{
+                    binding.etEmail.error = "Email tidak boleh kosong."
+                }
+                password.length < 8 -> {
+                    binding.etPassword.error = "Password minimal 8 karakter."
+                }
+                password != confPassword -> {
+                    binding.etConfirmPassword.error = "Password tidak cocok."
+                }
+                else -> {
+                    // Semua validasi lolos
+                    viewModel.register(fullname, email, password) { success, errorMessage ->
                         if (success) {
-                            loginFragment= LoginFragment()
+                            // Berhasil, navigasi ke login
+                            loginFragment = LoginFragment()
                             parentFragmentManager.beginTransaction()
-                                .setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right)
-                                .replace(R.id.fragmentContainer,loginFragment)
+                                .setCustomAnimations(
+                                    R.anim.slide_in_right,
+                                    R.anim.slide_out_left,
+                                    R.anim.slide_in_left,
+                                    R.anim.slide_out_right
+                                )
+                                .replace(R.id.fragmentContainer, loginFragment)
                                 .addToBackStack(null)
                                 .commit()
                         } else {
-                            Toast.makeText(requireContext(), "Login failed, please try again", Toast.LENGTH_SHORT).show()
+                            // Tampilkan pesan error
+                            showDialogAuth(errorMessage!!)
                         }
                     }
-                }else{
-                    Toast.makeText(requireContext(), "Password doesn't match", Toast.LENGTH_SHORT).show()
                 }
-            }else{
-                Toast.makeText(requireContext(),"Please fill all the fields",Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -78,4 +100,25 @@ class RegisterFragment : Fragment() {
 
         }
     }
+
+    private fun showDialogAuth(message: String){
+        val dialogview=layoutInflater.inflate(R.layout.dialog_auth,null)
+        val messageDialog=dialogview.findViewById<TextView>(R.id.dialog_auth_message)
+        val button=dialogview.findViewById<TextView>(R.id.dialog_auth_button)
+        dialogview.setBackgroundResource(R.drawable.rounded_blue)
+
+        messageDialog.text=message
+        val dialogAuth= AlertDialog.Builder(requireContext(), R.style.CustomDialogTheme)
+            .setView(dialogview)
+            .setCancelable(false)
+            .create()
+
+        button.setOnClickListener {
+            dialogAuth.dismiss()
+        }
+        dialogAuth.show()
+
+    }
+
 }
+

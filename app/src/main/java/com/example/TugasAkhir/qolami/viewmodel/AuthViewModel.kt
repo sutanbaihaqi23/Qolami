@@ -9,6 +9,7 @@ import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
+import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -26,8 +27,8 @@ class AuthViewModel : ViewModel() {
             onComplete(false, "Email tidak valid.")
             return
         }
-        if (password.length < 6) {
-            onComplete(false, "Password minimal 6 karakter.")
+        if (password.length < 8) {
+            onComplete(false, "Password minimal 8 karakter.")
             return
         }
 
@@ -86,20 +87,32 @@ class AuthViewModel : ViewModel() {
         }
     }
 
-    fun register(fullname: String, email: String, password: String, onComplete: (Boolean) -> Unit) {
+    fun register(fullname: String, email: String, password: String, onComplete: (Boolean, String?) -> Unit) {
         coroutineScope.launch {
             try {
+                // Buat akun baru di Firebase Auth
                 auth.createUserWithEmailAndPassword(email, password).await()
-                val userId = auth.currentUser?.uid ?: return@launch
+                val userId = auth.currentUser?.uid ?: throw Exception("User ID not found.")
+
+                // Simpan nama lengkap di Firestore
                 val user = hashMapOf("fullname" to fullname)
                 firestore.collection("users").document(userId).set(user).await()
-                onComplete(true)
+
+                onComplete(true, null) // Registrasi berhasil
+            } catch (e: FirebaseAuthUserCollisionException) {
+                // Email sudah digunakan
+                onComplete(false, "Email sudah digunakan.")
+            } catch (e: FirebaseNetworkException) {
+                // Masalah koneksi internet
+                onComplete(false, "Koneksi internet bermasalah.")
             } catch (e: Exception) {
-                Log.e("AuthViewModel", "Login failed: ${e.message}")
-                onComplete(false)
+                // Error lainnya
+                Log.e("AuthViewModel", "Register failed: ${e.message}")
+                onComplete(false, "Terjadi kesalahan, coba lagi nanti.")
             }
         }
     }
+
 
     fun isLoggedIn(): Boolean {
         return auth.currentUser != null

@@ -23,18 +23,16 @@ class LoginFragment : Fragment() {
     private lateinit var homeFragment: HomeFragment
     private lateinit var registerFragment: RegisterFragment
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         viewModel = ViewModelProvider(requireActivity())[AuthViewModel::class.java]
         binding = FragmentLoginBinding.inflate(inflater, container, false)
+
         return binding.root
     }
-
-
-
-        // Handle tombol back dari perangkat
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -44,21 +42,33 @@ class LoginFragment : Fragment() {
             val email = binding.etEmail.text.toString()
             val password = binding.etPassword.text.toString()
 
-            if (email.isEmpty() || password.isEmpty()) {
-                showDialogAuth("Email atau Kata Sandi Kosong")
-            } else {
-                viewModel.login(email, password) { success, message ->
-                    if (success) {
-                        // Arahkan ke HomeFragment jika login berhasil
-                        homeFragment = HomeFragment()
-                        parentFragmentManager.beginTransaction()
-                            .setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right)
-                            .replace(R.id.fragmentContainer, homeFragment)
-                            .addToBackStack(null)
-                            .commit()
-                    } else {
-                        // Tampilkan dialog error jika login gagal
-                        showDialogAuth(message!!)
+            when{
+                !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches() -> {
+                    binding.etEmail.error = "Email tidak valid."
+                }
+                password.length < 8 -> {
+                    binding.etPassword.error = "Password minimal 8 karakter."
+                }
+                email.isEmpty() ->{
+                    binding.etEmail.error = "Email tidak boleh kosong."
+                }
+                password.isEmpty() ->{
+                    binding.etPassword.error = "Password tidak boleh kosong."
+                }
+                else -> {
+                    viewModel.login(email, password) { success, message ->
+                        if (success) {
+                            // Arahkan ke HomeFragment jika login berhasil
+                            homeFragment = HomeFragment()
+                            parentFragmentManager.beginTransaction()
+                                .setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right)
+                                .replace(R.id.fragmentContainer, homeFragment)
+                                .addToBackStack(null)
+                                .commit()
+                        } else {
+                            // Tampilkan dialog error jika login gagal
+                            showDialogAuth(message!!)
+                        }
                     }
                 }
             }

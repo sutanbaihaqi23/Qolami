@@ -1,0 +1,28 @@
+<!-- circular_progress_bar.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape
+            android:innerRadiusRatio="2.5"
+            android:shape="ring"
+            android:thicknessRatio="6.0"
+            android:useLevel="true">
+            <solid android:color="#E0E0E0" />
+        </shape>
+    </item>
+    <item>
+        <rotate
+            android:fromDegrees="270"
+            android:toDegrees="270">
+            <shape
+                android:innerRadiusRatio="2.5"
+                android:shape="ring"
+                android:thicknessRatio="6.0"
+                android:useLevel="true">
+                <gradient
+                    android:endColor="#007DD6"
+                    android:startColor="#00BCD4"
+                    android:type="sweep" />
+            </shape>
+        </rotate>
+    </item>
+</layer-list>

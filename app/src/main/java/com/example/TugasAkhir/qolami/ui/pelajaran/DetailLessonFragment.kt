@@ -164,13 +164,13 @@ class DetailLessonFragment : Fragment() {
             "Dal" -> R.drawable.dalgif
             "Fa" -> R.drawable.fagif
             "Qaf" -> R.drawable.qofgif
-            "Wau" -> R.drawable.wawgif
+            "Wau" -> R.drawable.waugif
             "Kho" -> R.drawable.khogif
             "Kha" -> R.drawable.khagif
             "Jim" -> R.drawable.jimgif
             "Hamzah" -> R.drawable.hamzahgif
             "Ain" -> R.drawable.aingif
-            "Ghain" -> R.drawable.ghoingif
+            "Ghain" -> R.drawable.ghaingif
             "Sin" -> R.drawable.singif
             "Syin" -> R.drawable.syingif
             "Tzo" -> R.drawable.dhlogif
