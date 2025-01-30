@@ -94,12 +94,11 @@ class DetailGalleryPracticeFragment : Fragment() {
                 if (label == letterName) {
                     isTrue = true
                     binding.btnSaveDetailGallery.isVisible = true
-                    binding.tvAccuracyDetailGallery.text="Score : $confidence%"
-                    Toast.makeText(requireContext(), "Gambar benar! Confidence: $confidence%", Toast.LENGTH_SHORT).show()
+                    binding.tvAccuracyDetailGallery.text="Skor : $confidence%"
                 } else {
                     isTrue = false
                     binding.btnSaveDetailGallery.isVisible = false
-                    Toast.makeText(requireContext(), "Gambar salah. Coba lagi!", Toast.LENGTH_SHORT).show()
+                    binding.tvAccuracyDetailGallery.text="Skor : "
                 }
             }
         }
