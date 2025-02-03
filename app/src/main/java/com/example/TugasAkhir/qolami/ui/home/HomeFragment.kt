@@ -32,16 +32,16 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-
-
         viewModel = ViewModelProvider(requireActivity())[AuthViewModel::class.java]
         binding = FragmentHomeBinding.inflate(layoutInflater)
-        viewModel.getFullname { fullname ->
-            if (isAdded) { // Pastikan fragment aktif
+        viewModel.fullname.observe(viewLifecycleOwner) { fullname ->
+            if (isAdded) {
                 binding.tvHome.text = fullname ?: "Nama tidak tersedia"
             }
         }
+
+
+        viewModel.fetchFullname()
 
         requireActivity().onBackPressedDispatcher.addCallback(
             viewLifecycleOwner,

@@ -68,6 +68,8 @@ class DetailGalleryPracticeFragment : Fragment() {
         binding.btnEraserDetailGallery.setOnClickListener {
             binding.drawingView.clearCanvas()
             binding.tvAccuracyDetailGallery.text = "Skor : "
+            isTrue = false
+            binding.btnSaveDetailGallery.isVisible = false
         }
 
         binding.btnSpeakerDetailGallery.setOnClickListener {

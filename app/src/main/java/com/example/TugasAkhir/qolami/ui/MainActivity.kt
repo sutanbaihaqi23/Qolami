@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.setPadding
 import androidx.lifecycle.ViewModelProvider
 import com.example.TugasAkhir.qolami.R
@@ -24,10 +25,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         setContentView(binding.root)
         handleNavigationIntent(savedInstanceState)
-
-
         if (NetworkUtils.isInternetAvailable(this)){
             showCustomSnackbar("Terhubung dengan Internet !")
         }else{
@@ -38,11 +38,6 @@ class MainActivity : AppCompatActivity() {
                 finish()
             }, 3000)
         }
-
-
-
-
-
         viewModel = ViewModelProvider(this).get(AuthViewModel::class.java)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
@@ -98,25 +93,15 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("RestrictedApi")
     private fun showCustomSnackbar(message: String) {
-        // Inflate custom layout
         val snackbarView = LayoutInflater.from(this).inflate(R.layout.snackbar_galeri, null)
-
-        // Set the message
         val messageTextView = snackbarView.findViewById<TextView>(R.id.snackbar_message)
         messageTextView.text = message
-
-        // Create Snackbar
         val rootView: View = findViewById(android.R.id.content) // Menggunakan root view activity
         val snackbar = Snackbar.make(rootView, "", Snackbar.LENGTH_LONG)
         val snackbarLayout = snackbar.view as Snackbar.SnackbarLayout
-
-        // Remove default padding and background
         snackbarLayout.setPadding(0, 0, 0, 0)
         snackbarLayout.setBackgroundColor(resources.getColor(android.R.color.transparent))
-
-        // Add custom view to Snackbar
         snackbarLayout.addView(snackbarView, 0)
-        // Show Snackbar
         snackbar.show()
     }
 }

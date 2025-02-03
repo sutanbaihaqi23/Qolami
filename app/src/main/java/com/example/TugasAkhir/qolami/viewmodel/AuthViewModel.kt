@@ -21,6 +21,9 @@ class AuthViewModel : ViewModel() {
     private val firestore = FirebaseFirestore.getInstance()
     private val coroutineScope = CoroutineScope(Dispatchers.Main)
 
+    private val _fullname = MutableLiveData<String?>()
+    val fullname: LiveData<String?> get() = _fullname
+
     fun login(email: String, password: String, onComplete: (Boolean, String?) -> Unit) {
         // Validasi email dan password
         if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
@@ -57,6 +60,22 @@ class AuthViewModel : ViewModel() {
 
     fun getUserUid(): String? {
         return auth.currentUser?.uid ?: throw IllegalStateException("User is not logged in.")
+    }
+
+    fun fetchFullname() {
+        val userId = auth.currentUser?.uid ?: return
+        Log.d("AuthViewModel", "Fetching fullname for UID: $userId")
+        coroutineScope.launch(Dispatchers.IO) {
+            try {
+                val doc = firestore.collection("users").document(userId).get().await()
+                val fullname = doc.getString("fullname")
+                Log.d("AuthViewModel", "Fullname retrieved: $fullname")
+                _fullname.postValue(fullname) // Update LiveData
+            } catch (e: Exception) {
+                Log.e("AuthViewModel", "Error fetching fullname: ${e.message}")
+                _fullname.postValue(null) // Update LiveData dengan null jika error
+            }
+        }
     }
 
 
