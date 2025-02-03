@@ -83,7 +83,8 @@ class ResultTestFragment : Fragment() {
 
                     // Tentukan historyNumber berdasarkan jumlah history yang ada
                     Log.d("HistoryCount", "Current History Count: $currentHistoryCount")
-                    val historyNumber = currentHistoryCount + 1
+                    val lastHistoryNumber = database.testResultDao().getLastHistoryNumber(getUserUid!!) ?: 0
+                    val historyNumber = lastHistoryNumber + 1
                     Log.d("HistoryCount", "Calculated History Number: $historyNumber")
 
 

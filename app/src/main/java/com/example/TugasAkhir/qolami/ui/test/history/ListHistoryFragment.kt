@@ -2,12 +2,12 @@ package com.example.TugasAkhir.qolami.ui.test.history
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.addCallback
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.TugasAkhir.qolami.R
@@ -72,24 +72,20 @@ class ListHistoryFragment : Fragment() {
 
 
     private fun updateRecyclerView(items: List<ListHistoryItem>) {
-        val sortedItems = items.sortedBy { it.historyNumber }
+        val sortedItems = items.sortedBy { it.historyNumber } // Urutkan descending
         binding.rvListHistory.layoutManager = LinearLayoutManager(requireContext())
         adapter = ListHistoryAdapter(sortedItems) { item ->
-            // Navigasi manual ke DetailHistoryFragment
+            // Navigasi ke DetailHistoryFragment
             val detailFragment = DetailHistoryFragment()
-
-            // Kirim data ke DetailHistoryFragment menggunakan Bundle
             val bundle = Bundle().apply {
-                putInt("historyNumber", item.historyNumber)
+                putInt("historyNumber", item.historyNumber) // Ubah ke Long
                 putString("finishedNumber", item.finishedNumber)
                 putString("score", item.score.toString())
             }
             detailFragment.arguments = bundle
-
-            // Ganti fragment menggunakan parentFragmentManager
             parentFragmentManager.beginTransaction()
                 .replace(R.id.fragmentContainer, detailFragment)
-                .addToBackStack(null) // Tambahkan ke back stack agar bisa kembali
+                .addToBackStack(null)
                 .commit()
         }
         binding.rvListHistory.adapter = adapter

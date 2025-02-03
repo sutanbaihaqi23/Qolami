@@ -35,4 +35,7 @@ interface TestResultDao {
 """)
     suspend fun getSummaryForUser(userId: String): List<ListHistoryItem>
 
+    @Query("SELECT MAX(historyNumber) FROM test_results WHERE userId = :userId")
+    suspend fun getLastHistoryNumber(userId: String): Int?
+
 }

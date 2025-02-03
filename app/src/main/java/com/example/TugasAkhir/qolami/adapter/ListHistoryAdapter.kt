@@ -25,7 +25,7 @@ class ListHistoryAdapter(private val items: List<ListHistoryItem>, private val o
 
     inner class ViewHolder(private val binding: ItemListHistoryBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: ListHistoryItem) {
-            binding.tvHistoryNumber.text =  "Nomor : "+item.historyNumber.toString()
+            binding.tvHistoryNumber.text =  "Riwayat Ke -  "+item.historyNumber.toString()
             binding.tvFinished.text = "Terselesaikan : " +item.finishedNumber
             binding.tvScore.text = "Skor : "+item.score.toString()
 

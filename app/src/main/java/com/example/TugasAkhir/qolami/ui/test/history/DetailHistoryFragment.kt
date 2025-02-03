@@ -1,26 +1,19 @@
 package com.example.TugasAkhir.qolami.ui.test.history
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.activity.addCallback
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.TugasAkhir.qolami.R
 import com.example.TugasAkhir.qolami.adapter.DetailHistoryAdapter
-import com.example.TugasAkhir.qolami.adapter.ResultTestAdapter
-import com.example.TugasAkhir.qolami.data.TestResult
-import com.example.TugasAkhir.qolami.database.AppDatabase
-import com.example.TugasAkhir.qolami.database.TestResultDao
 import com.example.TugasAkhir.qolami.databinding.FragmentDetailHistoryBinding
 import com.example.TugasAkhir.qolami.viewmodel.AuthViewModel
 import com.example.TugasAkhir.qolami.viewmodel.TestResultViewModel
-import com.google.firebase.auth.FirebaseAuth
-import kotlinx.coroutines.launch
 
 
 class DetailHistoryFragment : Fragment() {
@@ -60,12 +53,22 @@ class DetailHistoryFragment : Fragment() {
             adapter.submitList(results)
         })
 
+        //buat handle untuk fragment back dari tombol device
+        requireActivity().onBackPressedDispatcher.addCallback {
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, ListHistoryFragment())
+                .addToBackStack(null)
+                .commit()
+        }
 
         binding.rvDetailHistory.layoutManager = LinearLayoutManager(requireContext())
         binding.rvDetailHistory.adapter = adapter
 
         binding.icBackToHomeTest.setOnClickListener {
-            requireActivity().onBackPressed()
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, ListHistoryFragment())
+                .addToBackStack(null)
+                .commit()
         }
         return binding.root
     }
