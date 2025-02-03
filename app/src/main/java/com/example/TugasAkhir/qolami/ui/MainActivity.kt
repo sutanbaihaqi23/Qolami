@@ -2,13 +2,14 @@ package com.example.TugasAkhir.qolami.ui
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.TextView
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.core.view.setPadding
-import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.Observer
 import com.example.TugasAkhir.qolami.R
 import com.example.TugasAkhir.qolami.databinding.ActivityMainBinding
 import com.example.TugasAkhir.qolami.ui.auth.LoginFragment
@@ -19,31 +20,36 @@ import com.example.TugasAkhir.qolami.viewmodel.AuthViewModel
 import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var viewModel: AuthViewModel
+
     private lateinit var binding: ActivityMainBinding
+    private lateinit var networkUtils: NetworkUtils
+    private val viewModel: AuthViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         setContentView(binding.root)
+
+        // Inisialisasi NetworkUtils
+        networkUtils = NetworkUtils(this)
+        networkUtils.registerNetworkCallback()
+
+        // Pantau perubahan koneksi internet
+        networkUtils.isConnected.observe(this, Observer { isConnected ->
+            if (!isConnected) {
+                showCustomSnackbar("Tidak Terhubung dengan Internet!")
+                binding.fragmentContainer.visibility = View.GONE
+                Handler().postDelayed({
+                    finish()
+                }, 3000)
+            } else {
+                showCustomSnackbar("Terhubung dengan Internet!")
+                binding.fragmentContainer.visibility = View.VISIBLE
+            }
+        })
+
         handleNavigationIntent(savedInstanceState)
-        if (NetworkUtils.isInternetAvailable(this)){
-            showCustomSnackbar("Terhubung dengan Internet !")
-        }else{
-            showCustomSnackbar("Tidak Terhubung dengan Internet !")
-            binding.fragmentContainer.visibility = View.GONE
-            val handler = android.os.Handler()
-            handler.postDelayed({
-                finish()
-            }, 3000)
-        }
-        viewModel = ViewModelProvider(this).get(AuthViewModel::class.java)
-        if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainer, LoginFragment())
-                .commit()
-        }
 
         if (viewModel.isLoggedIn()) {
             supportFragmentManager.beginTransaction()
@@ -57,8 +63,14 @@ class MainActivity : AppCompatActivity() {
                 .commit()
         }
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        networkUtils.unregisterNetworkCallback()
+    }
+
     private fun handleNavigationIntent(savedInstanceState: Bundle?) {
-        // Only handle navigation if this is a new instance
         if (savedInstanceState == null) {
             when (intent.getStringExtra("navigate_to")) {
                 "login" -> showLoginFragment()
@@ -96,7 +108,7 @@ class MainActivity : AppCompatActivity() {
         val snackbarView = LayoutInflater.from(this).inflate(R.layout.snackbar_galeri, null)
         val messageTextView = snackbarView.findViewById<TextView>(R.id.snackbar_message)
         messageTextView.text = message
-        val rootView: View = findViewById(android.R.id.content) // Menggunakan root view activity
+        val rootView: View = findViewById(android.R.id.content)
         val snackbar = Snackbar.make(rootView, "", Snackbar.LENGTH_LONG)
         val snackbarLayout = snackbar.view as Snackbar.SnackbarLayout
         snackbarLayout.setPadding(0, 0, 0, 0)
