@@ -96,25 +96,7 @@
             android:scaleType="fitCenter"
             android:alpha="0.7"/>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
-            <ImageView
-                android:id="@+id/solid_view_lines"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_4sdp"
-                android:background="@drawable/dashed_line_2"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="@dimen/_40sdp"
-                />
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_7sdp"
-                android:background="@drawable/dashed_line"
-                android:layout_above="@id/solid_view_lines"
-                android:layout_marginBottom="@dimen/_20sdp"/>
-        </RelativeLayout>
+
 
         <com.example.TugasAkhir.qolami.customview.DrawingView
             android:id="@+id/drawing_view"

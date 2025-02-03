@@ -7,6 +7,16 @@
     tools:context=".ui.latihan.gallery.LessonGalleryFragment"
     android:background="#015B8B">
 
+    <ImageView
+        android:layout_alignParentStart="true"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_14sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:id="@+id/btn_back_to_list"
+        android:background="@drawable/baseline_arrow_back_ios_24"
+        android:backgroundTint="@color/white"/>
+
     <TextView
         android:id="@+id/title_pelajaran1"
         android:layout_width="wrap_content"
@@ -14,7 +24,7 @@
         android:layout_alignParentTop="true"
         android:text="@string/lesson_gallery_text"
         android:fontFamily="@font/nunitoextrabold"
-        android:textSize="@dimen/_25ssp"
+        android:textSize="@dimen/_20ssp"
         android:layout_centerHorizontal="true"
         android:textColor="@color/white"
         android:layout_marginTop="@dimen/_10sdp"
@@ -78,7 +88,7 @@
             android:text="@string/hijaiyah_alphabet_text"
             android:textColor="#015B8B"
             android:fontFamily="@font/nunitoextrabold"
-            android:textSize="@dimen/_17ssp"/>
+            android:textSize="@dimen/_15ssp"/>
     </androidx.cardview.widget.CardView>
 
 

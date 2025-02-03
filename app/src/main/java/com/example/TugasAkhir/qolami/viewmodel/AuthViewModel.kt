@@ -90,23 +90,36 @@ class AuthViewModel : ViewModel() {
     fun register(fullname: String, email: String, password: String, onComplete: (Boolean, String?) -> Unit) {
         coroutineScope.launch {
             try {
+                // Cek apakah email sudah terdaftar di Firestore (opsional)
+                val querySnapshot = firestore.collection("users")
+                    .whereEqualTo("email", email)
+                    .get()
+                    .await()
+
+                if (!querySnapshot.isEmpty) {
+                    onComplete(false, "Email sudah terdaftar.")
+                    return@launch
+                }
+
                 // Buat akun baru di Firebase Auth
                 auth.createUserWithEmailAndPassword(email, password).await()
                 val userId = auth.currentUser?.uid ?: throw Exception("User ID not found.")
 
-                // Simpan nama lengkap di Firestore
-                val user = hashMapOf("fullname" to fullname)
+                // Simpan data pengguna di Firestore
+                val user = hashMapOf(
+                    "fullname" to fullname,
+                    "email" to email // Simpan email di Firestore untuk pengecekan di masa depan
+                )
                 firestore.collection("users").document(userId).set(user).await()
 
                 onComplete(true, null) // Registrasi berhasil
             } catch (e: FirebaseAuthUserCollisionException) {
-                // Email sudah digunakan
-                onComplete(false, "Email sudah digunakan.")
+                Log.e("AuthViewModel", "Email already in use: ${e.message}")
+                onComplete(false, "Email sudah terdaftar. Silakan login atau gunakan email lain.")
             } catch (e: FirebaseNetworkException) {
-                // Masalah koneksi internet
+                Log.e("AuthViewModel", "Network error: ${e.message}")
                 onComplete(false, "Koneksi internet bermasalah.")
             } catch (e: Exception) {
-                // Error lainnya
                 Log.e("AuthViewModel", "Register failed: ${e.message}")
                 onComplete(false, "Terjadi kesalahan, coba lagi nanti.")
             }

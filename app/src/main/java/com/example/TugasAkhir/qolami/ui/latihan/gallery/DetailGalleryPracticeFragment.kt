@@ -1,5 +1,6 @@
 package com.example.TugasAkhir.qolami.ui.latihan.gallery
 
+import android.annotation.SuppressLint
 import android.graphics.Bitmap
 import android.media.MediaPlayer
 import android.os.Bundle
@@ -8,9 +9,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.addCallback
+import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
+import androidx.core.view.setPadding
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import com.example.TugasAkhir.qolami.R
 import com.example.TugasAkhir.qolami.customview.DrawingView
 import com.example.TugasAkhir.qolami.data.Drawing
@@ -20,9 +26,11 @@ import com.example.TugasAkhir.qolami.util.ModelUtil
 import com.example.TugasAkhir.qolami.viewmodel.AuthViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.tensorflow.lite.Interpreter
 import java.io.File
+import com.google.android.material.snackbar.Snackbar
 
 
 class DetailGalleryPracticeFragment : Fragment() {
@@ -39,6 +47,7 @@ class DetailGalleryPracticeFragment : Fragment() {
     private lateinit var binding: FragmentDetailGalleryPracticeBinding
 
     private var mediaPlayer: MediaPlayer? = null
+    @SuppressLint("RestrictedApi")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -58,6 +67,7 @@ class DetailGalleryPracticeFragment : Fragment() {
 
         binding.btnEraserDetailGallery.setOnClickListener {
             binding.drawingView.clearCanvas()
+            binding.tvAccuracyDetailGallery.text = "Skor : "
         }
 
         binding.btnSpeakerDetailGallery.setOnClickListener {
@@ -65,8 +75,20 @@ class DetailGalleryPracticeFragment : Fragment() {
         }
 
         binding.icBack.setOnClickListener {
-            parentFragmentManager.popBackStack()
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, PracticeGalleryFragment())
+                .addToBackStack(null)
+                .commit()
         }
+
+        //buat handle bawaan back device
+        requireActivity().onBackPressedDispatcher.addCallback {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, PracticeGalleryFragment())
+                .addToBackStack(null)
+                .commit()
+        }
+
 
         binding.btnCheckDetailGallery.setOnClickListener {
             binding.drawingView.post {
@@ -87,19 +109,19 @@ class DetailGalleryPracticeFragment : Fragment() {
                 this.confidence = confidence
                 this.label = label
 
-                Log.d("Confidence", "$confidence")
-                Log.d("Label", "$label")
-
                 // Periksa apakah huruf yang digambar cocok
-                if (label == letterName) {
+                if (label == letterName && confidence >= 30) {
                     isTrue = true
                     binding.btnSaveDetailGallery.isVisible = true
-                    binding.tvAccuracyDetailGallery.text="Skor : $confidence%"
+                    binding.tvAccuracyDetailGallery.text = "Skor : $confidence%"
                 } else {
                     isTrue = false
                     binding.btnSaveDetailGallery.isVisible = false
-                    binding.tvAccuracyDetailGallery.text="Skor : "
+                    binding.tvAccuracyDetailGallery.text = "Skor : "
                 }
+
+                // Tampilkan Snackbar dengan pesan sesuai hasil pengecekan
+                showSnackbar(if (isTrue) "Huruf yang di gambar cocok!" else "Huruf yang di gambar tidak cocok!")
             }
         }
 
@@ -115,6 +137,26 @@ class DetailGalleryPracticeFragment : Fragment() {
             parentFragmentManager.popBackStack()
         }
         return binding.root
+    }
+
+    @SuppressLint("RestrictedApi")
+    private fun showSnackbar(message: String) {
+        val snackbar = Snackbar.make(binding.root, "", Snackbar.LENGTH_LONG)
+        val snackbarView = layoutInflater.inflate(R.layout.snackbar_galeri, null)
+        val snackbarLayout = snackbar.view as Snackbar.SnackbarLayout
+
+        // Hapus semua child view sebelumnya (jika ada)
+        snackbarLayout.removeAllViews()
+
+        // Tambahkan custom view ke Snackbar
+        snackbarLayout.addView(snackbarView, 0)
+        snackbarLayout.setPadding(0)
+        // Set pesan ke TextView di custom layout
+        val messageTextView = snackbarView.findViewById<TextView>(R.id.snackbar_message)
+        messageTextView.text = message
+
+        // Tampilkan Snackbar
+        snackbar.show()
     }
 
     private fun playSoundForLetter(letter: String) {
@@ -144,6 +186,7 @@ class DetailGalleryPracticeFragment : Fragment() {
         super.onDestroy()
         mediaPlayer?.release() // Bebaskan sumber daya MediaPlayer
     }
+
 
 
     private fun saveBitmapToDatabase(bitmap: Bitmap, user: String, letterName: String) {
@@ -206,6 +249,8 @@ class DetailGalleryPracticeFragment : Fragment() {
             else -> R.drawable.alifgif // Default GIF jika huruf tidak ditemukan
         }
     }
+
+
 
 
 }

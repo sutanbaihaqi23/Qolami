@@ -42,9 +42,6 @@ class PracticeGalleryFragment : Fragment() {
         userId= viewModel.getUserUid().toString()
         val rvGalleryPractice = binding.rvGalleryPractice
 
-        binding.icBack.setOnClickListener {
-            requireActivity().supportFragmentManager.popBackStack()
-        }
 
         // Ambil gambar yang sesuai dari database
         CoroutineScope(Dispatchers.Main).launch {
@@ -79,10 +76,16 @@ class PracticeGalleryFragment : Fragment() {
             rvGalleryPractice.adapter = adapter
 
             binding.icBack.setOnClickListener {
-                requireActivity().supportFragmentManager.popBackStack()
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.fragmentContainer, LessonGalleryFragment())
+                    .addToBackStack(null)
+                    .commit()
             }
             requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner){
-                requireActivity().supportFragmentManager.popBackStack()
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.fragmentContainer, LessonGalleryFragment())
+                    .addToBackStack(null)
+                    .commit()
             }
         }
 

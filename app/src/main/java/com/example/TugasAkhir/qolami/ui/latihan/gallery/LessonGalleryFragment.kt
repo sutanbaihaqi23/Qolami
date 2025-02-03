@@ -5,15 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.addCallback
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.TugasAkhir.qolami.R
 import com.example.TugasAkhir.qolami.adapter.GalleryLessonAdapter
 import com.example.TugasAkhir.qolami.databinding.FragmentLessonGalleryBinding
+import com.example.TugasAkhir.qolami.ui.latihan.ListLatihanFragment
 
 
 class LessonGalleryFragment : Fragment() {
-    private var _binding: FragmentLessonGalleryBinding? = null
-    private val binding get() = _binding!!
+
+    private lateinit var binding : FragmentLessonGalleryBinding
     private lateinit var galleryLessonAdapter: GalleryLessonAdapter
 
     override fun onCreateView(
@@ -21,7 +23,20 @@ class LessonGalleryFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentLessonGalleryBinding.inflate(inflater, container, false)
+        binding = FragmentLessonGalleryBinding.inflate(inflater, container, false)
+        binding.btnBackToList.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, ListLatihanFragment())
+                .addToBackStack(null)
+                .commit()
+        }
+
+        requireActivity().onBackPressedDispatcher.addCallback {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, ListLatihanFragment())
+                .addToBackStack(null)
+                .commit()
+        }
         return binding.root
     }
 
@@ -51,11 +66,5 @@ class LessonGalleryFragment : Fragment() {
                 .addToBackStack(null)
                 .commit()
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        galleryLessonAdapter.release()
-        _binding = null
     }
 }

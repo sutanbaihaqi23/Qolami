@@ -57,7 +57,7 @@ class RegisterFragment : Fragment() {
                 !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches() -> {
                     binding.etEmail.error = "Email tidak valid."
                 }
-                email.isEmpty() ->{
+                email.isEmpty() -> {
                     binding.etEmail.error = "Email tidak boleh kosong."
                 }
                 password.length < 8 -> {
@@ -71,15 +71,8 @@ class RegisterFragment : Fragment() {
                     viewModel.register(fullname, email, password) { success, errorMessage ->
                         if (success) {
                             // Berhasil, navigasi ke login
-                            loginFragment = LoginFragment()
                             parentFragmentManager.beginTransaction()
-                                .setCustomAnimations(
-                                    R.anim.slide_in_right,
-                                    R.anim.slide_out_left,
-                                    R.anim.slide_in_left,
-                                    R.anim.slide_out_right
-                                )
-                                .replace(R.id.fragmentContainer, loginFragment)
+                                .replace(R.id.fragmentContainer, LoginFragment())
                                 .addToBackStack(null)
                                 .commit()
                         } else {
